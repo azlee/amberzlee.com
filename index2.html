@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="sitemap.xml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
+      <meta name="keywords" content="amber lee,
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+    <meta name="description" content="University of Waterloo Student Amber Lee" />
+    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
+    <link href="amber.css" rel="stylesheet">
+    <!--used for animating balloon-->
+      <link href="animate.css" rel="stylesheet" >
+
+    <!--icon-->
+    <link rel="shortcut icon" href="icon.png" >
+    <!--Font for name on nav bar-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"/>
+    <!--font for quote-->
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script src="bootstrap.js"></script>
+
+<script src="bootstrap.min.js"></script>
+ 
+</head>
+
+<style>
+#menu.opaque {
+  color:black;
+  background-color:#111;
+}
+</style>
+
+<!--1. navigation bar-->
+    <nav class="menu">
+        <ul> 
+        <li><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
+        <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
+       <li> <a href="amber_resume.pdf" target="_blank" >resume</a></li>
+        <li><a href="#portfolio" class="smoothScroll" >portfolio</a></li>
+        <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
+    </ul>
+    <a href="#" id="pull"><img src="navicon.png"></img></a>
+</nav>
+<!--end navigation bar-->
+
+<script>
+//parallax background->change y position 
+$(document).ready(function(){
+   var $window = $(window);
+   $('section[data-type="parallax"]').each(function(){
+     var $bg = $(this);              
+      $(window).scroll(function() {                           
+        var yPos = -($window.scrollTop() / $bg.data('speed')); 
+        // background position
+        var coords = 'center'+ yPos + 'px';
+        // move the background
+        $bg.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script>
+
+
+<!--2. home page-->
+<section id="home" data-type="parallax" data-speed=2>
+  <div class="home-content">
+<div class="main-text">
+  <h1 class="wow fadeInUp"> Amber Lee </h1>
+  <h3 class="wow fadeIn delay1">Aspiring Developer </h3>
+</div>
+</div>
+</section>
+  <!--end homepage-->
+
+<!-- 3. Intro -->
+<div id="intro">
+  <div class="wow fadeIn">
+  <h1> Hello there. I'm Amber. </h1>
+  <img src="IMG_.jpg"></img>
+  <h3><span>A CS student at <a href="https://www.uwaterloo.ca/">University of Waterloo</a></span></h3>
+</div>
+  <hr>
+</div>
+
+<!--4. About me-->
+<div id="aboutme">
+  <h2>About Me</h2>
+  <p  style="float:left">
+    I am a Computer Science student at University of Waterloo who was previously enrolled in Biomedical Science but switched after 2nd year. I found a great passion for design and development and feel so fulfilled and incredibly fortunate to have finally found something that I enjoy doing! </p>
+    <p>
+    I am always yearning for more knowledge and learning how to grow as a developer and designer. 
+    My goal is to keep my design work simple and always produce code that is functional and efficient. I enjoy complex problems and thinking logically and am always searching for more learning opportunities!
+</p>
+<h4>
+  <blockquote>
+    It is fine to celebrate success but it is more important to heed the lessons of failure. <br> <div id="font1">- Bill Gates</div>
+  </blockquote>
+</h4>
+<br>
+<br>
+</div>
+
+<hr>
+
+<div id="myinterests">
+  <h3>My Interests</h3>
+  <div id="icon">
+  <img src="art.png"></img>
+  Design
+</div>
+<div id="icon">
+  <img src="web.png"></img>
+  Web 
+</div>
+<div id="icon">
+  <img src="dev.png"></img>
+  Development
+</div>
+<div id="icon">
+  <img src="heart.png"></img>
+  Healthy Living
+</div>
+</div>
+
+<hr class="hr2">
+
+<div id="workwithme">
+  <h3>I'd love to work on a project with you! </h3>
+    <h4>(Pro bono as well)</h4>
+    <a href="mailto:azlee@uwaterloo.ca">
+    <button>Let's Talk </button>
+    <br><br><br>
+    </a>
+  </div>
+
+
+<div id="myskills">
+  <h3>My Skills</h3>
+</div>
+<div id="skills">
+<div class="skillbar clearfix " data-percent="95%">
+  <div class="skillbar-title" style="background: transparent;"><span>HTML5</span></div>
+  <div class="skillbar-bar" style="background: #5bc0de;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: transparent"><span>CSS3</span></div>
+  <div class="skillbar-bar" style="background: #716572;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="65%">
+  <div class="skillbar-title" style="background: #transparent;"><span>Javascript</span></div>
+  <div class="skillbar-bar" style="background: #0d5875;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: transparent;"><span>C/C++</span></div>
+  <div class="skillbar-bar" style="background: #ae8798;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="75%">
+  <div class="skillbar-title" style="background: transparent"><span>Python</span></div>
+  <div class="skillbar-bar" style="background: #716573;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+  <div class="skillbar-title" style="background: transparent;"><span>Java</span></div>
+  <div class="skillbar-bar" style="background: #5bc0de;"></div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: transparent;"><span>Adobe CC</span></div>
+  <div class="skillbar-bar" style="background: #ae8798;"></div>
+</div>
+</div>
+
+
+<!-- footer --> 
+    <div id="contactme" class="contact footer">
+        <div class="logos">
+        <a href="malito:azlee@uwaterloo.ca"><img src="gmail.png"></img></a>
+        <a href="https://www.linkedin.com/pub/amber-lee/9a/a5a/991">
+        <img src="linkedin.png"></img> </a>
+        <a href="https://www.facebook.com/amber.lee.31924">
+        <img src="facebook.png"></img></a>
+        <a href="https://www.flickr.com/photos/47510961@N03/">
+          <img src="flickr.png"></img></a>
+          <a href="https://dribbble.com/azlee">
+          <img src="dribbble.png"></img></a>
+      </div>
+      <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2015 </p> 
+      
+</div>
+  <!-- /footer -->
+
+</body>
+<!--close main content-->
+
+<!--Scripts-->
+<script type="text/javascript" src="smoothscroll.js"></script>
+<script src="jquery.appear.js"></script>
+<script src="wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+
+<script>
+// Fade out intro page 
+function CheckScroll(el) {
+    var topVal = el.outerHeight(true);
+    var bottom_of_object = el.offset().top + topVal;
+    var top_of_window = $(window).scrollTop();
+    var amountOff = bottom_of_object - top_of_window;
+    var opacity = amountOff / topVal;
+    el.find('.intro').css('opacity',opacity);
+}
+$(window).scroll(function(){
+    CheckScroll($('.jumbo'));        
+}); 
+</script>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('.skillbar').each(function(){
+        jQuery(this).appear(function() {
+            jQuery(this).find('.skillbar-bar').animate({
+                width:jQuery(this).attr('data-percent')
+            },4000);
+        });
+    });
+});
+</script>
+
+<script src="jquery.appear.js"></script>
+
+
+<!--menu visibility on phone-->
+<script>
+$(function() {
+  var pull=$('#pull');
+  menu=$('.menu ul');
+  menuHeight=menu.height();
+
+  $(pull).on('click', function(e) {
+    e.preventDefault();
+    menu.slideToggle();
+  });
+});
+</script>
+
+<script>
+$(window).resize(function() {
+  var w= $(window).width();
+  if (w>500 && menu.is(':hidden')) {
+    menu.removeAttr('style');
+  }
+});
+</script>
+
+<script> 
+// for navbar-add 'color' when it scrolls 
+var a = $(".menu").offset().top;
+
+$(document).scroll(function(){
+    if($(this).scrollTop() > a)
+    {   
+       $('.menu').addClass('opaque');
+    } else {
+       $('.menu').removeClass('opaque');
+    }
+});
+</script>
+
+<!--end scripts-->
+
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->

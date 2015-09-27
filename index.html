@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="sitemap.xml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
+      <meta name="keywords" content="amber lee,
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+    <meta name="description" content="University of Waterloo Student Amber Lee" />
+    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    <link href="amber.css" rel="stylesheet">
+      <link href="animate.css" rel="stylesheet" >
+
+    <!--icon-->
+    <link rel="shortcut icon" href="icon.png" >
+    <!--font for quote-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+</head>
+
+<!--1. navigation bar-->
+<body>
+
+    <nav class="menu">
+      <a href="#home" class="smoothScroll navIcon"><img src="icon.png"></a>
+        <ul> 
+        <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
+        <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
+        <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
+       <li> <a href="amber_resume.pdf" target="_blank" >resume</a></li>
+        <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
+    </ul>
+    <a href="#" id="pull"><img src="navicon.png"></img></a>
+</nav>
+<!--end navigation bar-->
+
+<script>
+//parallax background->change y position 
+$(document).ready(function(){
+   var $window = $(window);
+   $('section[data-type="parallax"]').each(function(){
+     var $bg = $(this);              
+      $(window).scroll(function() {                           
+        var yPos = -(($window.scrollTop() - $bg.offset().top)/ $bg.data('speed')); 
+        // background position
+        var coords = '50%'+ yPos + 'px';
+        // move the background
+        $bg.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script>
+
+
+<!--2. home page-->
+<section id="home">
+  <span>
+  <div class="home-content">
+<div class="main-text">
+  <h1 class="animated fadeInUp"> Amber Lee </h1>
+  <h3 class="animated fadeIn delay1">Aspiring Developer </h3>
+</div>
+</div>
+</span>
+</section>
+  <!--end homepage-->
+
+<!-- 3. Intro -->
+<div id="intro">
+  <div>
+  <h1 class="wow fadeIn"> Hello there. I'm Amber. </h1>
+  <img class="wow fadeIn" src="profile1.jpeg"></img>
+  <h3><span>A CS student at <a href="https://www.uwaterloo.ca/">University of Waterloo</a></span></h3>
+</div>
+  <hr>
+</div>
+
+<!-- portfolio -->
+<div id="portfolio">
+  <h2> Portfolio </h2>
+  <div class="item">
+    <div id="box1">
+      <div id="overlay">
+      <span id="plus"><h2>ThirdEye Pre-Launch page</h2>
+      <br>
+      <h3>One page website I designed and developed for a budding startup pro bono!<h3>
+      <p>HTML, CSS, JQuery, Foundation</p></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div id="box2">
+      <div id="overlay">
+      <span id="plus"><h2>Keyobi Illustrations</h2>
+      <br>
+      <h3>Various illustrations for Keyobi's social networking sites and for enhancement of the blogs<h3>
+      <p>Adobe Illustrator</p></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div id="box3">
+      <div id="overlay">
+      <span id="plus"><h2>Candy Crush like Game</h2>
+      <br>
+      <h3>Desktop game created using Object-oriented programming principles & XWindow. Project included both a text view and a graphical interface<h3>
+      <p>C++, Object Oriented Programming</p></span>
+      </div>
+    </div>
+  </div>
+
+
+<div class="item">
+    <div id="box4">
+      <div id="overlay">
+      <span id="plus"><h2>EventureTime Web Application</h2>
+      <br>
+      <h3>Web Application that allows users to easily find events near them and based on their interests. Built under 36 hours during Hack the North 2015<h3>
+      <p>Django, HTML/CSS, Yelp & Instagram API</p></span>
+      </div>
+    </div>
+  </div>
+
+
+<div class="item">
+    <div id="box5">
+      <div id="overlay">
+      <span id="plus"><h2>Side Scroller Mobile Game</h2>
+      <br>
+      <h3>Simple mobile game using a cat hero protagonist and developed with libGDX framework. Still in development <h3>
+      <p>Java, Eclipse, Adobe Illustrator</p></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<hr>
+
+<!--4. About me-->
+<div id="aboutme" class="wow fadeIn">
+  <h2>About Me</h2>
+  <p  style="float:left">
+    I am a Computer Science student at University of Waterloo who was previously enrolled in Biomedical Science but switched after 2nd year. I found a great passion for design and development and feel so fulfilled and incredibly fortunate to have finally found something that I enjoy doing! </p>
+    <p>
+    I am always yearning for more knowledge and improving as a developer and designer. In my off time, I can also be found cooking and cheering on the Patriots. Currently working for <a href="https://www.canadapost.ca/web/en/home.page">Canada Post</a> and <a href="http://keyobi.com/">Keyobi</a> and I'll be searching for an internship for Winter 2016 term!
+</p>
+<h4>
+  <blockquote>
+    It is fine to celebrate success but it is more important to heed the lessons of failure. <br> <div id="font1">- Bill Gates</div>
+  </blockquote>
+</h4>
+<br>
+<br>
+</div>
+
+<hr >
+
+<div id="myinterests" class="wow fadeInUp">
+  <h3>My Interests</h3>
+<div id="icon">
+  <img src="dev.png"></img>
+  Software Development
+</div>
+  <div id="icon">
+  <img src="art.png"></img>
+  Design
+</div>
+<div id="icon">
+  <img src="web.png"></img>
+  Web 
+</div>
+<div id="icon">
+  <img src="heart2.png"></img>
+  Healthy Living
+</div>
+</div>
+
+<hr class="hr2">
+
+
+<div id="myskills">
+  <h3>My Skills</h3>
+<div id="skills">
+  <div class="column">
+
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: transparent;"><span>C/C++</span></div>
+  <div class="skillbar-bar" style="background: #6b6b6b;"></div>
+</div> 
+
+<div class="skillbar clearfix " data-percent="95%">
+  <div class="skillbar-title" style="background: transparent;"><span>HTML5</span></div>
+  <div class="skillbar-bar" style="background: #5e405f;"></div>
+</div>
+
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: transparent"><span>CSS3</span></div>
+  <div class="skillbar-bar" style="background: #304848;"></div>
+</div> 
+
+<div class="skillbar clearfix " data-percent="65%">
+  <div class="skillbar-title" style="background: #transparent;"><span>Javascript</span></div>
+  <div class="skillbar-bar" style="background: #4f364c;"></div>
+</div>
+<div class="skillbar clearfix " data-percent="75%">
+  <div class="skillbar-title" style="background: transparent"><span>Python</span></div>
+  <div class="skillbar-bar" style="background: #5e405f;"></div>
+</div>
+</div>
+
+<div class="column">
+
+<div class="skillbar clearfix " data-percent="60%">
+  <div class="skillbar-title" style="background: transparent;"><span>Java</span></div>
+  <div class="skillbar-bar" style="background: #6b6b6b;"></div>
+</div> 
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: transparent;"><span>Illustrator</span></div>
+  <div class="skillbar-bar" style="background: #304848;"></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<section id="workwithme" data-type="parallax" data-speed=4>
+  <span>
+  <div id="col-1">
+  <h3>Let's talk projects. </h3>
+    <h4>(I do pro bono as well)</h4>
+    <a href="mailto:azlee@uwaterloo.ca">
+    <button >Let's Talk </button>
+    </a>
+    <br><br><br>
+  </div>
+  <div id="col-2">
+    <img class="wow fadeIn" src="laptop.png"></img>
+  </div>
+</span>
+  </section>
+
+<!-- footer --> 
+    <div id="contactme" class="contact footer">
+        <div class="logos wow fadeIn">
+        <a href="malito:azlee@uwaterloo.ca"><img src='gmail.png'></img></a>
+        <a href="https://www.linkedin.com/pub/amber-lee/9a/a5a/991">
+        <img src="linkedin.png"></img> </a>
+        <a href="https://www.facebook.com/amber.lee.31924">
+        <img src="facebook.png"></img></a>
+        <a href="https://www.flickr.com/photos/47510961@N03/">
+          <img src="flickr.png"></img></a>
+          <a href="https://dribbble.com/azlee">
+          <img src="dribbble.png"></img></a>
+      </div>
+      <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2015 </p> 
+      
+</div>
+  <!-- /footer -->
+</body>
+<!--close main content-->
+
+<!--Scripts-->
+<script type="text/javascript" src="smoothscroll.js"></script>
+<script src="jquery.appear.js"></script>
+<script src="wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('.skillbar').each(function(){
+        jQuery(this).appear(function() {
+            jQuery(this).find('.skillbar-bar').animate({
+                width:jQuery(this).attr('data-percent')
+            },4000);
+        });
+    });
+});
+</script>
+
+
+<!--menu visibility on phone-->
+<script>
+$(function() {
+  var pull=$('#pull');
+  menu=$('.menu ul');
+  menuHeight=menu.height();
+
+  $(pull).on('click', function(e) {
+    e.preventDefault();
+    menu.slideToggle();
+  });
+});
+</script>
+
+<script>
+$(function() {
+
+  
+$(window).resize(function() {
+  var w= $(window).width();
+  if (w>500 && menu.is(':hidden')) {
+    menu.removeAttr('style');
+  }
+});
+</script>
+
+<script> 
+// for navbar-add 'color' when it scrolls 
+var a = $(".menu").offset().top;
+
+$(document).scroll(function(){
+    if($(this).scrollTop() > a)
+    {   
+       $('.menu').fadeIn().addClass('opaque');
+    } else {
+       $('.menu').removeClass('opaque');
+    }
+});
+</script>
+
+<!--end scripts-->
+

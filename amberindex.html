@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="sitemap.xml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
+      <meta name="keywords" content="amber lee,
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+    <meta name="description" content="University of Waterloo Student Amber Lee" />
+    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
+    <link href="bootstrap.min.css" rel="stylesheet"> 
+    <link href="ambercss.css" rel="stylesheet">
+
+    <!--icon-->
+    <link rel="shortcut icon" href="icon.png" >
+    <!--Font for name on nav bar-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"/>
+    <!--font for quote-->
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+ 
+</head>
+
+<style>
+.nav li.active a{
+  color:#111 !important;
+  background-color:transparent !important;
+}
+.nav {
+  height:50px;
+} 
+.navbar-default {
+  background-color:transparent;
+   transition: all .45s ease-in-out;
+   -webkit-transition: all .45s ease;
+  -moz-transition: all .45s ease;
+  -o-transition:all .45s ease;
+  -ms-transition:all .45s ease;
+   border-color:transparent;
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a {
+  background-color:transparent;
+  font-family:'Open Sans';
+  font-size:13px;
+  color:#fff ;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition:all .3s ease;
+  -ms-transition:all .3s ease;
+  transition:all .3s ease;
+}
+.navbar-default.color {
+  background-color:#fff ;
+  background-color:rgba(169,131,145,.8);
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition:all .3s ease;
+  -ms-transition:all .3s ease;
+}
+body {
+    padding-bottom: 40px;
+}
+</style>
+
+<script> //Fade in body on load
+$(document).ready(function(){$("body").hide().fadeIn(1300);});
+</script>
+
+<!--navigation bar-->
+<!--navbar--> 
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+    <div class="container">
+    <!--Better mobile display (collapse nav bar)-->
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only"> Toggle navigation </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span> 
+    </button>
+    <a class="navbar-brand" href="#home"   class="smoothScroll"><img src="icon.png" style="width:1]35px;height:35px;"></a>
+</div>
+    <div class="navbar-collapse collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right"> 
+        <li><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
+        <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
+       <li> <a href="ambers_resume.pdf" target="_blank" >resume</a></li>
+        <li><a href="#portfolio" class="smoothScroll" >portfolio</a></li>
+        <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
+    </ul>
+</div> 
+</div>
+</nav>
+<!--end navbar-->
+<body data-spy="scroll" data-targe="#navbar">
+
+<script>
+//parallax background->change y position 
+$(document).ready(function(){
+   $window = $(window);
+   $('section[data-type="parallax"]').each(function(){
+     var $scroll = $(this);              
+      $(window).scroll(function() {                           
+        var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+        // background position
+        var coords = 'center '+ yPos + 'px';
+        // move the background
+        $scroll.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script>
+
+<!--home page-->
+<section id="home" data-speed="2" data-type="parallax"></section>
+  <!--end homepage-->
+
+<!--intro-->
+<div class="jumbo height">
+<div id="intro" class="intro">
+  <div class="text-vcenter">
+ <div class="fade">
+        <div id="content-wrapper2">
+    <h1 >  Hi there, I'm Amber Lee  </h1>
+    <h3 ><span>A <a href="https://cs.uwaterloo.ca/">CS</a> student at <a  href="https://uwaterloo.ca/"> University of Waterloo</a></span></h3>
+    <h4 > I'm seeking an internship for Summer 2015 and I'd love to have the opportunity to work with you! Feel free to <a href="#contactme" class="smoothScroll">get in touch</a>. </h4>
+    <img src="IMG_.jpg" style="width:240px;height:240px;" class="img-circle">
+  </div>
+</div>
+    <div style="margin:0px auto;">
+      <button type="button" class="btn btn-primary"> 
+       <a href="ambers_resume.pdf">Download Resume</a></button>
+    </div>
+    </div>
+</div>
+</div>
+<!--end intro-->
+
+<!--About me section-->
+<div id="aboutme" class="aboutme">
+  <div class="container">
+    <h3 > About Me</h3>
+    <div class="row">
+      <div class="col-sm-6" style="padding-top:25px;padding-bottom:25px;">
+        <div style="background-color:#fff;" class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">My Story</h2>
+          </div>
+          <div class="panel-body lead"> 
+   <p > When I first entered university, I was enrolled in Biomedical Science with a plan to pursue Pharmacy. However while studying sciences at the university level, I never really felt the fulfillment I wanted. Going to class and labs and completing assignments felt like a chore at the time. And after volunteering at a pharmacy, I knew that it wasn't my true passion. So I took a chance early this year and switched to Math since I knew I had a strong logical mind. And after taking computer science courses, I found a passion for coding! I never had any prior experience with coding, however I really enjoy the challenges and problem-solving aspect of it. Going to classes everyday and learning new languages is something I look forward to now and I find it to be so rewarding. I feel incredibly fortunate to have found something that I love learning! I am now pursuing a Bachelor of Computer Science. </p>
+        <p>    Of course, I still have a lot to learn when it comes to coding and web & app developement. But I am excited to continue building on my knowledge and I'm always searching for more learning opportunities! 
+        </p> 
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--end aboutme section-->
+
+<!--skillbar-->
+<div  id="moreaboutme">
+  <div class="container">
+<hr style=" border-color:#707070;">
+    <h3 class="text-center" >Skills </h3> 
+    <hr style=" border-color:#707070;">
+    <div class="skillbar clearfix " data-percent="95%">
+  <div class="skillbar-title" style="background: #cdc9c9;"><span>HTML5/CSS</span></div>
+  <div class="skillbar-bar" style="background: #cdc9c9;"></div>
+  
+</div>
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #8b7765;"><span>Ilustrator CC</span></div>
+  <div class="skillbar-bar" style="background: #8b7765;"></div>
+  
+</div>
+
+<div class="skillbar clearfix " data-percent="60%">
+  <div class="skillbar-title" style="background: #cdaf95;"><span>JavaScript</div>
+  <div class="skillbar-bar" style="background: #cdaf95;"></div>
+  
+</div>
+
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #838b83;"><span>Python</div>
+  <div class="skillbar-bar" style="background: #838b83;"></div>
+  
+</div>
+
+<div class="skillbar clearfix " data-percent="80%">
+  <div class="skillbar-title" style="background: #cdc8b1;"><span>C </div>
+  <div class="skillbar-bar" style="background: #cdc8b1;"></div>
+  
+</div>
+
+<div class="skillbar clearfix " data-percent="97%">
+  <div class="skillbar-title" style="background: #ffdead;"><span>Microsoft Office</div>
+  <div class="skillbar-bar" style="background: #ffdead;"></div>
+  
+</div>
+
+<div class="skillbar clearfix" data-percent="60%">
+  <div class="skillbar-title" style="background:#a1bac1;"><span>
+    Java</div>
+    <div class="skillbar-bar" style="background:#a1bac1;"></div>
+    
+  </div>
+
+<div class="skillbar clearfix " data-percent="85%">
+  <div class="skillbar-title" style="background: #cdb79e;"><span>Customer Service</div>
+  <div class="skillbar-bar" style="background: #cdb79e;"></div>
+</div>
+<!--end skillbar-->
+    <hr style=" border-color:#707070;padding-top:15px;">
+    <h3 class="text-center">My Hobbies & Interests </h3> 
+    <hr style=" border-color:#707070;">
+    <div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <div class="grow image">
+        <img src="tv.jpg">
+      </div>
+        <h4>Watching TV</h4>
+        <p> Sometimes, I like to catch up on some tv! My favourite shows include <i>Big Bang Theory</i>, <i>Suits</i>, <i>Masterchef</i> and <i>Jeopardy</i></p>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <div class="grow image">
+        <img src="guitar.jpg">
+      </div>
+        <h4>Music</h4>
+        <p >I enjoy listening to music but also making music! I've played piano for years and taught myself how to play guitar a few years ago </p>
+      </div>
+  
+      <div class="col-sm-3 col-xs-6">
+        <div class="grow image">
+        <img src="cooking.jpg">
+      </div>
+        <h4 >Eating & Cooking</h4>
+        <p >Trying and making new recipes is something I love doing! I appreciate good food and I find cooking to be rewarding</p>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <div class="grow image">
+        <img src="sudoku.jpg">
+      </div>
+        <h4 >Learning</h4>
+        <p>I love solving problems! Whether it's coding challenges, solving a proof or solving sudoku problems, I'm up for it!</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!--end hobbies/interests page-->
+
+<!--quote-->
+<div id="quote">
+          <h4 style="padding-top:200px;"><span>It's fine to celebrate success but it is more important to heed the lessons of failure.</h4>
+  <h4 style="padding-bottom:150px;"><span>-Bill Gates</span></h4>
+</div>
+<!--end quote-->
+
+  <!-- footer --> 
+    <div id="contactme" class="contact footer">
+        <div class="logos" style="padding-top:100px;">
+        <a href="malito:azlee@uwaterloo.ca"><img src="gmail.png"></img></a>
+        <a href="https://www.linkedin.com/pub/amber-lee/9a/a5a/991">
+        <img src="linkedin.png"></img> </a>
+        <a href="https://www.facebook.com/amber.lee.31924">
+        <img src="facebook.png"></img></a>
+        <a href="https://www.flickr.com/photos/47510961@N03/">
+          <img src="flickr.png"></img></a>
+          <a href="https://dribbble.com/azlee">
+          <img src="dribbble.png"></img></a>
+      </div>
+      <p style="padding-top:28px;">Copyright &copy; Amber Lee 2014 </p> 
+      <p> Background images and vector icons created using Adobe Illustrator</p>    
+</div>
+  <!-- /footer -->
+</body>
+<!--close main content-->
+
+<!--Scripts-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="smoothscroll.js"></script>
+<script src="bootstrap.js"></script>
+<script src="bootstrap.min.js"></script>
+
+<script>
+// Fade out intro page 
+function CheckScroll(el) {
+    var topVal = el.outerHeight(true);
+    var bottom_of_object = el.offset().top + topVal;
+    var top_of_window = $(window).scrollTop();
+    var amountOff = bottom_of_object - top_of_window;
+    var opacity = amountOff / topVal;
+    el.find('.intro').css('opacity',opacity);
+}
+$(window).scroll(function(){
+    CheckScroll($('.jumbo'));        
+}); 
+</script>
+
+<script>
+// Function determines if '.fade' div is in view and if so, the class 'in-view' is added
+// which causes the content in the div to appear 
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    $(window).scroll(function(){
+
+        if (isScrolledIntoView('.fade') === true) {
+            $('.fade').addClass('in-view')
+        }
+    }); </script>
+
+<script src="jquery.appear.js"></script>
+
+<!--skillbar when appears-->
+<script>
+jQuery(document).ready(function(){
+    jQuery('.skillbar').each(function(){
+        jQuery(this).appear(function() {
+            jQuery(this).find('.skillbar-bar').animate({
+                width:jQuery(this).attr('data-percent')
+            },6000);
+        });
+    });
+});
+</script>
+
+<script> 
+// for navbar-add 'color' when it scrolls past homepage
+var homebottom = $('#home').offset().top + $('#home').height();
+// on scroll, 
+$(window).on('scroll',function(){
+    bottom = Math.round($(window).scrollTop()) + 5;
+    if (bottom> homebottom) {
+        $('.navbar-default').addClass('color');
+    } else {
+        $('.navbar-default').removeClass('color', 9000);
+    }
+});
+</script>
+<!--end scripts-->
+
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
