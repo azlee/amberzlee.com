@@ -3,9 +3,9 @@ CSS for amberzlee.com */
 /* 1. Body */
 
 body {
+    padding:0px;
     margin: 0 0;
     height: 100%;
-    max-width: 100%;
     overflow-x: hidden;
     font-family: "Open Sans", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -140,7 +140,7 @@ body {
 }
 #home span {
     display: table-cell;
-    background-color: rgba(57, 49, 36, 0.5)
+    background-color: rgba(57, 49, 36, 0.4);
 }
 #home h1 {
     text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.9);
@@ -228,7 +228,9 @@ body {
 #intro img {
     display: block;
     margin: auto;
-    width:50%;
+    width:25%;
+    border-radius:50%;
+    -webkit-border-radius:50%;
 }
 hr {
     color: #e0e0e0;
@@ -955,7 +957,7 @@ hr {
         padding: 20px 30px;
     }
     #intro img {
-        width:70%;
+        width:50%;
     } 
     .column {
         width:100%;
@@ -995,7 +997,7 @@ hr {
         padding:20px 10px;
     }
     #intro img {
-        width:80%;
+        width:60%;
     }
     #workwithme img {
         display: block;
