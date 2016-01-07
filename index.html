@@ -1,4 +1,4 @@
-
+<!-- Photo background credit to Merisa Lee https://www.flickr.com/photos/36124328@N06/ -->
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns="sitemap.xml">
@@ -28,7 +28,7 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
 <body>
 
     <nav class="menu">
-      <a href="#home" class="smoothScroll navIcon"><img src="icon.png"></a>
+      <a href="#home" class="smoothScroll"><img class="navIcon" src="icon.png"></a>
         <ul> 
         <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
         <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
@@ -150,9 +150,9 @@ $(document).ready(function(){
 <div id="aboutme" class="wow fadeIn">
   <h2>About Me</h2>
   <p  style="float:left">
-    I am a Computer Science student at University of Waterloo who was previously enrolled in Biomedical Science but switched after 2nd year. I found a great passion for design and development and feel so fulfilled and incredibly fortunate to have finally found something that I enjoy doing! </p>
+    I'm Amber - I am a Computer Science student at the University of Waterloo. I have a great passion for design and development (and the intersection) and feel so fulfilled and incredibly fortunate to have found something that I enjoy doing! </p>
     <p>
-    I am always yearning for more knowledge and improving as a developer and designer. In my off time, I can also be found cooking and cheering on the Patriots. Currently working for <a href="https://www.canadapost.ca/web/en/home.page">Canada Post</a> and <a href="http://keyobi.com/">Keyobi</a> and I'll be searching for an internship for Winter 2016 term!
+    I am always yearning for more knowledge and improving as a developer and designer. In my off time, I can also be found cooking and cheering on the Patriots. Currently working for <a href="https://www.nanopay.net/">nanoPay</a> and <a href="http://keyobi.com/">Keyobi</a> and I'll be searching for an internship for Fall 2016 term!
 </p>
 <h4>
   <blockquote>
@@ -305,6 +305,7 @@ $(function() {
 });
 </script>
 
+
 <script>
 $(function() {
 
@@ -319,16 +320,14 @@ $(window).resize(function() {
 
 <script> 
 // for navbar-add 'color' when it scrolls 
-var a = $(".menu").offset().top;
+var menuOffset = $(".menu").offset().top;
 
-$(document).scroll(function(){
-    if($(this).scrollTop() > a)
-    {   
-       $('.menu').fadeIn().addClass('opaque');
-    } else {
-       $('.menu').removeClass('opaque');
-    }
+$(window).on("scroll touchmove", function () {
+    $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset);
+    $('.navIcon').toggleClass('smaller', $(document).scrollTop() > menuOffset);
 });
+
+
 </script>
 
 <!--end scripts-->

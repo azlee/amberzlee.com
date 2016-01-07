@@ -13,10 +13,9 @@ body {
 /* 2. Menu */
 
 .menu {
-    margin-top: 0;
     z-index: 100;
     text-align: right;
-    padding-top: 0px;
+    padding-top: 40px;
     position: fixed;
     width: 100%;
     background-color: transparent;
@@ -27,16 +26,11 @@ body {
     font-size: 12.5px;
     color: #fff;
     letter-spacing: 2px;
-    -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-    -ms-transition: all .3s;
-    transition: all .3s;
+    transition: background-color 500ms, padding 500ms, font-size 500ms;
+}
+.menu.shorter {
+    padding-top:2px;
+    background-color: rgba(0,0,0,.85);
 }
 .menu.opaque {
     transition: all .5s;
@@ -47,9 +41,9 @@ body {
     background-color: rgba(0, 0, 0, .85);
     display: block;
 }
-.navIcon img {
-    width:30px;
-    height:30px;
+.navIcon {
+    width:50px;
+    height:50px;
     float:left;
     margin:15px 25px;
     filter: alpha(opacity=90);
@@ -61,6 +55,10 @@ body {
     -ms-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+.navIcon.smaller {
+    width: 30px;
+    height: 30px;
+}
 .menu img:hover {
     cursor:pointer;
     filter: alpha(opacity=90);
@@ -70,7 +68,7 @@ body {
 .menu ul {
     float: right;
     height: auto;
-    padding: 6px 8px;
+    padding: 3px 8px;
     margin: 0px;
     padding-top: 10px;
 }
@@ -121,7 +119,7 @@ body {
     height:85%;
     height:500px;
     height: 85vh;
-    background: url("bokeh.jpg") center no-repeat;
+    background: url("fields.jpg") center no-repeat;
     margin: 0 auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -246,6 +244,8 @@ hr {
 
 /* Portfolio */
 #portfolio {
+    font-family: "Open Sans", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
     display:table;
     width:100%;
     margin:0 auto;
@@ -255,8 +255,6 @@ hr {
 #portfolio h2 {
     text-align:center;
     letter-spacing: 5px;
-    font-family: "Open Sans", arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
     font-weight: 300;
     height: 50px;
@@ -549,7 +547,7 @@ hr {
     width: 100%;
     display: table;
     margin-top: 0;
-    background: url("dew.jpg") 50% 0 no-repeat fixed;
+    background: url("cattails.jpg") 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -975,6 +973,9 @@ hr {
     }
 }
 @media (max-width: 510px) {
+    #home h3 {
+	font-size: 15px;
+    }
     #intro h1 {
         line-height: 200%;
         padding-top: 100px;
@@ -987,8 +988,8 @@ hr {
         color: rgba(0, 0, 0, .8);
     }
     #intro h3 {
-        letter-spacing: 1px;
-        font-size: 12.5px;
+        letter-spacing: 2px;
+        font-size: 11px;
         padding-bottom: 50px;
         color: #fff;
     }
@@ -1025,13 +1026,6 @@ hr {
     .main-text {
         padding-top:250px;
         padding-bottom:250px;
-    }
-    #overlay {  
-        opacity:1;
-    }
-
-    #box1:hover #overlay, #box2:hover #overlay, #box3:hover #overlay, #box4:hover #overlay, #box5:hover #overlay {
-        opacity:0;
     }
 
 }
