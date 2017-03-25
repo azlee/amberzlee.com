@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="sitemap.xml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
+      <meta name="keywords" content="amber lee,
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+    <meta name="description" content="University of Waterloo Student Amber Lee" />
+    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="amber.css" rel="stylesheet">
+      <link href="animate.css" rel="stylesheet" >
+
+    <!--icon-->
+    <link rel="shortcut icon" href="icon.png" >
+    <!--font for quote-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+</head>
+
+<!--1. navigation bar-->
+<!-- <body>
+
+    <nav class="menu">
+      <a href="#home" class="smoothScroll"><img class="navIcon" src="icon.png"></a>
+        <ul> 
+        <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
+        <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
+        <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
+       <li> <a href="resume.pdf" target="_blank" >resume</a></li>
+        <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
+    </ul>
+    <a href="#" id="pull"><img src="navicon.png"></img></a>
+</nav> -->
+<!--end navigation bar-->
+
+
+<script>
+//parallax background->change y position 
+$(document).ready(function(){
+   var $window = $(window);
+   $('section[data-type="parallax"]').each(function(){
+     var $bg = $(this);              
+      $(window).scroll(function() {                           
+        var yPos = -(($window.scrollTop() - $bg.offset().top)/ $bg.data('speed')); 
+        // background position
+        var coords = '50%'+ yPos + 'px';
+        // move the background
+        $bg.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script>
+
+
+<!--2. home page-->
+<section id="rayhome">
+  <span>
+  <div class="home-content">
+<div class="main-text">
+  <h1 class="animated fadeInUp"> Ray Tracer </h1>
+  <h3 class="animated fadeIn delay1">Final Project Demo for CS488 </h3>
+  <h6> Note: Image from Ray Tracing in One Weekend book </h6>
+</div>
+</div>
+</span>
+</section>
+  <!--end homepage -->
+
+<div class="container-fluid">
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-8">
+        <h2> 1. Antialiasing </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Antialiasing was implemented using supersampling. Each pixel has a number of rays (20 rays) sent from random positions in the pixel and the final colour is average using these samples. I made the antialising method adaptive so that it doesn't shoot out 20 rays for every single pixel. The 20 rays are only sent out if the color of at least one of the corners of the pixel differs from the others. 
+        <br> <br>
+        The image on the left is rendered without antialising. The one on the right is rendered with it.
+    </div>
+    <div class="col-sm-4">
+        <img src="nonhierWithoutAA.png" style="padding:15px"> 
+        <img src="nonhierWithAA.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <img src="cone.png" style="padding:15px"> 
+        <img src="cylinder.png" style="padding:15px"> 
+    </div>
+    <div class="col-sm-8">
+        <h2> 2. Primitives </h2> <br>
+        <p class="lead" style="font-size:20px">
+            I implemented cones and cylinders as the additional primitives. This involved created new subclasses of primitives and implementing their intersection methods as well as creating new lua commands to create these primitives. I did ray-cylinder intersection by referencing <a href = "http://woo4.me/wootracer/cylinder-intersection/">here</a> and ray-cone intersection by referencing <a href="http://mrl.nyu.edu/~dzorin/rend05/lecture2.pdf">this</a>. </p>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-8">
+        <h2> 3. Texture Mapping </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Texture mapping was implemented for spheres. (do more..) </p>
+    </div>
+    <div class="col-sm-4">
+        <img src="texture.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <img src="" style="padding:15px"> 
+    </div>
+    <div class="col-sm-8">
+        <h2> 4. Bump Mapping </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Bump mapping was implemented for spheres. (do more..) </p>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-8">
+        <h2> 5. Acceleration Mechanism (BVH) </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Bounding hierarchial volumes was implemented to accelerate rendering (and save me <b>a lot</b> of time waiting). This objective was quite complex as it involved restructuring a lot of code of Assignment 4. I implemented a BVH for each node and stored an AABB (Axis aligned bounding box) for each BVH. The leaf nodes being the AABBs for the primitives (or for the triangles of Meshes). Intersect goes through the BVH and only continues if the ray is within the AABB. Therefore we don't recurse through every single node for intersection like we did without BVH. Implementing this objective before the other ones was important to save time rendering. </p>
+    </div>
+    <div class="col-sm-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th> Time to render simple-cows.lua </th>
+                    <th> Time to render macho-cows.lua </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Without BVH </td>
+                    <td> Put time here </td>
+                    <td> Put time here </td>
+                </tr>
+                <tr> 
+                    <td> With BVH </td>
+                    <td> Put time with BVH here </td>
+                    <td> Put time with BVH here </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <h2> 8. Soft Shadows </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Soft shadows was implemented using distributed ray tracing. The light source is treated as if it's a spherical light source. Then many rays are randomly computed over the spherical light source and shot from the intersection point to the random light source point. The fraction of rays that that are "shadowed" is multiplied by the pixel's shading value computed. 
+        <br> <br>
+        The image on the left is rendered using a point source light. The second is generated using 5 randomized rays over a spherical light source, third with 10 rays and fourth image with 100 rays.
+    </div>
+    <div class="col-sm-8">
+        <img src="notSoft.png" style="padding:15px"> 
+        <img src="softShadow5rays.png" style="padding:15px"> 
+        <img src="softShadow10rays.png" style="padding:15px"> 
+        <img src="soft100rays.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+
+
+</div>
