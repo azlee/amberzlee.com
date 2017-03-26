@@ -117,7 +117,7 @@ $(document).ready(function(){
             </tbody>
         </table>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="nonhierWithoutAA.png" style="padding:15px"> 
         <img src="nonhierWithAA.png" style="padding:15px"> 
     </div>
@@ -130,7 +130,7 @@ $(document).ready(function(){
         <p class="lead" style="font-size:20px">
             I implemented cones and cylinders as the additional primitives. This involved created new subclasses of primitives and implementing their intersection methods as well as creating new lua commands to create these primitives. I did ray-cylinder intersection by referencing <a href = "http://woo4.me/wootracer/cylinder-intersection/">here</a> and ray-cone intersection by referencing <a href="http://mrl.nyu.edu/~dzorin/rend05/lecture2.pdf">this</a>. </p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="cone.png" style="padding:15px"> 
         <img src="cylinder.png" style="padding:15px"> 
     </div>
@@ -143,7 +143,7 @@ $(document).ready(function(){
         <p class="lead" style="font-size:20px">
             Texture mapping was implemented by generating barycentric coordinates for the primitive. These are then interpolated onto a texture image to retrieve the colour of the coordinate. </p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="texture.png" style="padding:15px"> 
     </div>
   </div>
@@ -155,7 +155,7 @@ $(document).ready(function(){
         <p class="lead" style="font-size:20px">
             Bump mapping was implemented for spheres. (do more..) </p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="" style="padding:15px"> 
     </div>
   </div>
@@ -198,10 +198,13 @@ $(document).ready(function(){
     <div class="col-sm-4">
         <h2> 6. Refraction & transparency </h2> <br>
         <p class="lead" style="font-size:20px">
-            Refraction was implemented...
+            Refraction was implemented. by casting secondary refracted rays using Snell's law for objects that have materials with an index of refraction. I tried using Frednel's equations to balance the ratio between reflection and refraction but this was a bit broken... (fix)
         <br> <br>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="refract.png">
+        <img src="refract2.png">
+        <img src="reflectAndRefract.png">
     </div>
   </div>
   <hr>
@@ -214,7 +217,7 @@ $(document).ready(function(){
         <br> <br>
         The image on the left is rendered using a point source light. The second is generated using 5 randomized rays over a spherical light source, third with 10 rays and fourth image with 100 rays.
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="notSoft.png" style="padding:15px"> 
         <img src="softShadow5rays.png" style="padding:15px"> 
         <img src="softShadow10rays.png" style="padding:15px"> 
