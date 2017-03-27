@@ -441,7 +441,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("rayTraceSmall.jpg");
+    background:url("reflectAndRefract.png");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;

@@ -138,25 +138,25 @@ $(document).ready(function(){
   <hr>
 
   <div class="row" style="padding:40px">
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         <h2> 3. Texture Mapping </h2> <br>
         <p class="lead" style="font-size:20px">
-            Texture mapping was implemented by generating barycentric coordinates for the primitive. These are then interpolated onto a texture image to retrieve the colour of the coordinate. </p>
+            Texture mapping was implemented by generating barycentric coordinates for the primitive. These are then interpolated onto a texture image to retrieve the colour of the coordinate.   </p>
     </div>
-    <div class="col-sm-4"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="texture.png" style="padding:15px"> 
     </div>
   </div>
   <hr>
 
   <div class="row" style="padding:40px">
-    <div class="col-sm-8">
+    <div class="col-sm-6">
         <h2> 4. Bump Mapping </h2> <br>
         <p class="lead" style="font-size:20px">
-            Bump mapping was implemented for spheres. (do more..) </p>
+            Bump mapping was implemented for spheres using the same raster file as texture mapping. With bump mapping we are modifying the surface normal at intersection. We do this by treating the texture map as if it's a single-valued height function. We don't use the value of the function but the partial derivatives to calculate the perturbed normal. This adds realism to the objects without actually changing their geometry.</p>
     </div>
-    <div class="col-sm-4"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="" style="padding:15px"> 
+    <div class="col-sm-6">
+        <img src="bumpMapSample.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
     </div>
   </div>
   <hr>
@@ -198,7 +198,7 @@ $(document).ready(function(){
     <div class="col-sm-4">
         <h2> 6. Refraction & transparency </h2> <br>
         <p class="lead" style="font-size:20px">
-            Refraction was implemented. by casting secondary refracted rays using Snell's law for objects that have materials with an index of refraction. I tried using Frednel's equations to balance the ratio between reflection and refraction but this was a bit broken... (fix)
+            Refraction was implemented similarly to reflection. I casted secondary refracted rays using Snell's law for objects that have materials with an index of refraction. I then used Fresnel's equations to balance the ratio between reflection and refraction. 
         <br> <br>
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
