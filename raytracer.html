@@ -93,6 +93,39 @@ $(document).ready(function(){
 
   <div class="row" style="padding:40px">
     <div class="col-sm-6">
+        <h2> 0.5 Multithreading </h2> <br>
+        <p class="lead" style="font-size:20px">
+            Multithreading was implemented to improve the efficiency of the ray tracer. Each thread is given a scan line job once they complete their current scan line job. This improves efficiency over dividing the rendered image into chunks for each thread to render since we have less idle threads if the image is clumpy (lots of intersections) in some areas but not in others.
+    </div>
+    <div class="col-sm-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th> Time to render macho-cows (including BVH) </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Single threaded</td>
+                    <td> 15.047s </td>
+                </tr>
+                <tr>
+                    <td>6 threads</td>
+                    <td> 2.723s </td>
+                </tr>
+                <tr>
+                    <td> 12 threads</td>
+                    <td> 1.153s </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
         <h2> 1. Antialiasing </h2> <br>
         <p class="lead" style="font-size:20px">
             Antialiasing was implemented using supersampling. Each pixel has a number of rays (24 rays) sent from random positions in the pixel and the final colour is average using these samples. I made the antialising method adaptive so that it doesn't shoot out additional rays for every single pixel. The additional rays are only sent out if the color of at least one of the corners of the pixel differs from the others. 
@@ -118,8 +151,8 @@ $(document).ready(function(){
         </table>
     </div>
     <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="nonhierWithoutAA.png" style="padding:15px"> 
-        <img src="nonhierWithAA.png" style="padding:15px"> 
+        <img src="macho-cows2.png" style="padding:15px"> 
+        <img src="macho-cows.png" style="padding:15px"> 
     </div>
   </div>
   <hr >
@@ -141,7 +174,9 @@ $(document).ready(function(){
     <div class="col-sm-6">
         <h2> 3. Texture Mapping </h2> <br>
         <p class="lead" style="font-size:20px">
-            Texture mapping was implemented by generating barycentric coordinates for the primitive. These are then interpolated onto a texture image to retrieve the colour of the coordinate.   </p>
+            Texture mapping was implemented by generating barycentric coordinates for the primitive. These are then interpolated onto a texture image to retrieve the colour of the coordinate. 
+            <br><br>
+            Bilinear filtering was used (referenced <a href="https://en.wikipedia.org/wiki/Bilinear_filtering"> here </a>). This was used to smooth the textures when they're displayed at different sizes then they are. Bilinear filtering performs bilinear interpolation between the four texels nearest the point the pixel represents. I originally did not have bilinear filtering (simply interpolated the UV coordinates onto the texture map) but when I did bump mapping I noticed how badly the 'bumps' looked so I needed a different approach.  </p>
     </div>
     <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
         <img src="texture.png" style="padding:15px"> 
@@ -153,7 +188,7 @@ $(document).ready(function(){
     <div class="col-sm-6">
         <h2> 4. Bump Mapping </h2> <br>
         <p class="lead" style="font-size:20px">
-            Bump mapping was implemented for spheres using the same raster file as texture mapping. With bump mapping we are modifying the surface normal at intersection. We do this by treating the texture map as if it's a single-valued height function. We don't use the value of the function but the partial derivatives to calculate the perturbed normal. This adds realism to the objects without actually changing their geometry.</p>
+            Bump mapping was implemented using the same raster file as texture mapping. With bump mapping we are modifying the surface normal at intersection. We do this by treating the texture map as if it's a single-valued height function. We don't use the value of the function but the partial derivatives to calculate the perturbed normal (to do this you need the tangent vectors to the normal which can be calculated using cross product operation). This adds realism to the objects without actually changing their geometry.</p>
     </div>
     <div class="col-sm-6">
         <img src="bumpMapSample.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
@@ -165,7 +200,9 @@ $(document).ready(function(){
     <div class="col-sm-8">
         <h2> 5. Acceleration Mechanism (BVH) </h2> <br>
         <p class="lead" style="font-size:20px">
-            Bounding hierarchial volumes was implemented to accelerate rendering (and save me <b>a lot</b> of time waiting). This objective was quite complex as it involved restructuring a lot of code of Assignment 4. I implemented a BVH and stored an AABB (Axis aligned bounding box) for each BVH node. The leaf nodes being the AABBs for the primitives (or for the triangles of Meshes). Intersect goes through the BVH and only continues if the ray is within the AABB. Therefore we don't recurse through every single node for intersection like we did without BVH. Implementing this objective before the other ones was important to save time rendering. </p>
+            Bounding hierarchial volumes was implemented to accelerate rendering. This objective was quite complex as it involved changing a lot of code of Assignment 4. I implemented a BVH and stored an AABB (Axis aligned bounding box) for each BVH node. The leaf nodes being the AABBs for the primitives (or for the triangles of Meshes). Intersect goes through the BVH and only continues if the ray is within the AABB of the BVH node.
+            <br><br>
+            Note that my code for A4 simply looped through the entire SceneNode tree for every ray and checked for intersection against every Primitive and Mesh. Therefore, implementing BVH offers much faster rendering time! </p>
     </div>
     <div class="col-sm-4">
         <table class="table">
@@ -180,7 +217,7 @@ $(document).ready(function(){
                 <tr>
                     <td>Without BVH </td>
                     <td> 1m 23.35s</td>
-                    <td> At least 30m </td>
+                    <td> At least 30m! </td>
                 </tr>
                 <tr> 
                     <td> With BVH </td>
@@ -198,13 +235,22 @@ $(document).ready(function(){
     <div class="col-sm-4">
         <h2> 6. Refraction & transparency </h2> <br>
         <p class="lead" style="font-size:20px">
-            Refraction was implemented similarly to reflection. I casted secondary refracted rays using Snell's law for objects that have materials with an index of refraction. I then used Fresnel's equations to balance the ratio between reflection and refraction. 
+            Refraction was implemented similarly to reflection. I casted secondary refracted rays using Snell's law for objects that have materials with an index of refraction. I then used Fresnel's equations to calculate how much light is transmitted vs reflected for materials such as glass and water.
         <br> <br>
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="refract.png">
-        <img src="refract2.png">
-        <img src="reflectAndRefract.png">
+        <img src="refract2.png" style="padding:15px;">
+        <img src="reflectAndRefract.png"  style="padding:15px;">
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <h2> 7. Caustics via Illumination Map </h2> <br>
+        <p class="lead" style="font-size:20px">
+           Did not complete.
+        <br> <br>
     </div>
   </div>
   <hr>
@@ -225,6 +271,50 @@ $(document).ready(function(){
     </div>
   </div>
   <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <h2> 9. Animation </h2> <br>
+        <p class="lead" style="font-size:20px">
+            My favourite Pixar film is Up so I wanted to recreate the scene where the house flies up in the air. Unfortunately I had to simplify the scene a lot for time constraint reasons. Ideally I would have modeled the Up house in Blender and exported it as an obj file. I would have added a texture map for the background of a sky for realism.
+            <br> <br>
+            This animation consists of 100 images. I created a Bash script to modify one of my lua files to move the balloons up by half a pixel for each file and then render all the images. 
+    </div>
+    <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="animate.gif" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-4">
+        <h2> 10. Final Scene </h2> <br>
+        <p class="lead" style="font-size:20px">
+            My final scene was simple. It used soft shadows, refraction, cylinder primitive, texture & bump mapping.
+            <br> <br>
+    </div>
+    <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="finalScene.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+
+<div class="row" style="padding:40px">
+    <div class="col-sm-12">
+        <h2> Final Thoughts </h2> <br>
+        <p class="lead" style="font-size:20px">
+            I really enjoyed working on the project and learned so much!
+            Some things I would have done differently include: <br><br>
+            - Would have worked on the final scene while implementing my project objectives rather than at the end. I definitely underestimated the time each objective would take so by the end I didn't leave enough time to make a cooler final scene! <br><br>
+            - Would have chosen CSGs as an objective. This could have really been useful for the final scene.
+            <br> <br>
+            Overall, this course was a great basis for an introduction to graphics knowledge. I plan on continuing to improve on this ray tracer after the course ends so I can create awesome scenes :) Thank you professor
+    </div>
+  </div>
+  <hr>
+
+
+
 
 
 </div>
