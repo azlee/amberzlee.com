@@ -29,7 +29,6 @@ body {
     transition: background-color 500ms, padding 500ms, font-size 500ms;
 }
 .menu.shorter {
-    padding-top:2px;
     background-color: rgba(0,0,0,.85);
 }
 .menu.opaque {

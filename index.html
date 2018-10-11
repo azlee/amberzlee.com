@@ -6,9 +6,9 @@
   <meta charset="utf-8" />
   <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
       <meta name="keywords" content="amber lee,
-University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo, amber lee seattle">
     <meta name="description" content="University of Waterloo Student Amber Lee" />
-    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <title> Amber Lee - Software Engineer </title>
     <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
@@ -31,7 +31,6 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
 <body>
 
   <nav class="menu">
-    <a href="#home" class="smoothScroll"><img class="navIcon" src="icon.png"></a>
     <ul> 
     <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
     <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
@@ -67,7 +66,7 @@ $(document).ready(function(){
   <div class="home-content">
 <div class="main-text">
   <h1 class="animated fadeInUp"> Amber Lee </h1>
-  <h3 class="animated fadeIn delay1">Software Developer </h3>
+  <h3 class="animated fadeIn delay1">Software Engineer </h3>
 </div>
 </div>
 </span>
@@ -79,7 +78,7 @@ $(document).ready(function(){
   <div>
   <h1 class="wow fadeIn"> Hello there. I'm Amber. </h1>
   <img class="wow fadeIn" src="linkedinPhoto.jpg"></img>
-  <h3><span>Software Developer at Amazon</span></h3>
+  <h3><span>Software Engineer at Amazon</span></h3>
 </div>
   <hr>
 </div>
@@ -145,7 +144,6 @@ $(document).ready(function(){
     </div>
   </div>
 
-
 <div class="item">
     <div id="box5">
       <div id="overlay">
@@ -156,7 +154,6 @@ $(document).ready(function(){
       </div>
     </div>
   </div>
-
 
 <div class="item">
     <div id="box4">
@@ -178,9 +175,9 @@ $(document).ready(function(){
 <div id="aboutme" class="wow fadeIn">
   <h2>About Me</h2>
   <p  style="float:left">
-A few years ago, I took my first Computer Science course at UW (after feeling discontent in Science) and thus began my love for problem solving & coding. So I made the switch into CS and never looked back! I feel <b>incredibly</b> fulfilled and fortunate to have found something that I genuinely enjoy doing. </p>
+I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile Transportation team. I have an interest in building web applications and full stack development.</p>
     <p>
-    I am always yearning for more knowledge and learning how to improve as a developer and designer. My other interests include health & fitness, cooking, learning guitar, reading and bouldering. Currently working at Amazon
+    I am always yearning for more knowledge and learning how to improve as a developer and designer. My other interests include health & fitness, cooking, learning guitar, reading and bouldering.
 </p>
 <h4>
   <blockquote>
@@ -359,8 +356,8 @@ $(window).resize(function() {
 var menuOffset = $(".menu").offset().top;
 
 $(window).on("scroll touchmove", function () {
-    $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset);
-    $('.navIcon').toggleClass('smaller', $(document).scrollTop() > menuOffset);
+    $('.menu').toggleClass('shorter', ($(document).scrollTop() > menuOffset);
+    $('.menu').toggleClass('smaller', $(document).scrollTop() > menuOffset);
 });
 
 
