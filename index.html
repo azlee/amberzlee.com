@@ -29,14 +29,13 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
 
 <!--1. navigation bar-->
 <body>
-
   <nav class="menu">
     <ul> 
-    <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
-    <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
-    <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
-    <li> <a href="resume.pdf" target="_blank" >resume</a></li>
-    <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
+    <a href="#home" class="smoothScroll"><li>home</li></a>
+    <a href="#portfolio" class="smoothScroll"><li>portfolio</li></a>
+    <a href="#aboutme" class="smoothScroll"><li>about me</li></a>
+    <a href="resume.pdf" target="_blank"><li>resume</li></a>
+    <a href="#contactme" class="smoothScroll"><li>contact me</li></a>
     </ul>
     <a href="#" id="pull"><img src="navicon.png"></img></a>
   </nav>
@@ -59,18 +58,17 @@ $(document).ready(function(){
 }); // close out script
 </script>
 
-
 <!--2. home page-->
-<header id="home">
+<section id="home" data-type="parallax" data-speed=2>
   <span>
   <div class="home-content">
 <div class="main-text">
-  <h1 class="animated fadeInUp"> Amber Lee </h1>
+  <h1 class="animated fadeInUp"> AMBER LEE </h1>
   <h3 class="animated fadeIn delay1">Software Engineer </h3>
 </div>
 </div>
 </span>
-</header>
+</section>
   <!--end homepage-->
 
 <!-- 3. Intro -->
@@ -177,7 +175,7 @@ $(document).ready(function(){
   <p  style="float:left">
 I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile Transportation team. I have an interest in building web applications and full stack development.</p>
     <p>
-    I am always yearning for more knowledge and learning how to improve as a developer and designer. My other interests include health & fitness, cooking, learning guitar, reading and bouldering.
+    I am always yearning for more knowledge and learning how to improve as a developer and designer. My other interests include health & fitness, cooking, learning guitar, reading, travelling and bouldering.
 </p>
 <h4>
   <blockquote>
@@ -225,21 +223,21 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
 
 <div class="skillbar clearfix " data-percent="95%">
   <div class="skillbar-title" style="background: transparent;"><span>HTML5</span></div>
-  <div class="skillbar-bar" style="background: #5e405f;"></div>
+  <div class="skillbar-bar" style="background: #645c84;"></div>
 </div>
 
 <div class="skillbar clearfix " data-percent="95%">
   <div class="skillbar-title" style="background: transparent"><span>CSS3</span></div>
-  <div class="skillbar-bar" style="background: #304848;"></div>
+  <div class="skillbar-bar" style="background: #427996;"></div>
 </div> 
 
 <div class="skillbar clearfix " data-percent="80%">
   <div class="skillbar-title" style="background: #transparent;"><span>Javascript</span></div>
-  <div class="skillbar-bar" style="background: #4f364c;"></div>
+  <div class="skillbar-bar" style="background: #a2738c;"></div>
 </div>
 <div class="skillbar clearfix " data-percent="75%">
   <div class="skillbar-title" style="background: transparent"><span>Python</span></div>
-  <div class="skillbar-bar" style="background: #5e405f;"></div>
+  <div class="skillbar-bar" style="background: #645c84;"></div>
 </div>
 </div>
 
@@ -251,15 +249,15 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
 </div> 
 <div class="skillbar clearfix " data-percent="80%">
   <div class="skillbar-title" style="background: transparent;"><span>node.js</span></div>
-  <div class="skillbar-bar" style="background: #4f364c;"></div>
+  <div class="skillbar-bar" style="background: #a2738c;"></div>
 </div>
 <div class="skillbar clearfix " data-percent="90%">
   <div class="skillbar-title" style="background: transparent;"><span>Illustrator</span></div>
-  <div class="skillbar-bar" style="background: #304848;"></div>
+  <div class="skillbar-bar" style="background: #427996;"></div>
 </div>
 <div class="skillbar clearfix " data-percent="90%">
   <div class="skillbar-title" style="background: transparent;"><span>AngularJS</span></div>
-  <div class="skillbar-bar" style="background: #5e405f;"></div>
+  <div class="skillbar-bar" style="background: #645c84;"></div>
 </div>
 </div>
 </div>
@@ -296,7 +294,7 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
         <a href="https://www.flickr.com/photos/47510961@N03/">
           <img src="flickr.png"></img></a>
       </div>
-      <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2016 </p> 
+      <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2019 </p> 
       
 </div>
   <!-- /footer -->
@@ -323,7 +321,6 @@ jQuery(document).ready(function(){
 });
 </script>
 
-
 <!--menu visibility on phone-->
 <script>
 $(function() {
@@ -341,8 +338,6 @@ $(function() {
 
 <script>
 $(function() {
-
-  
 $(window).resize(function() {
   var w= $(window).width();
   if (w>500 && menu.is(':hidden')) {
@@ -354,13 +349,11 @@ $(window).resize(function() {
 <script> 
 // for navbar-add 'color' when it scrolls 
 var menuOffset = $(".menu").offset().top;
-
+var w= $(window).width();
 $(window).on("scroll touchmove", function () {
-    $('.menu').toggleClass('shorter', ($(document).scrollTop() > menuOffset);
+    $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset && w > 800);
     $('.menu').toggleClass('smaller', $(document).scrollTop() > menuOffset);
 });
-
-
 </script>
 
 <!--end scripts-->
