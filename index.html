@@ -75,7 +75,7 @@ $(document).ready(function(){
 <div id="intro">
   <div>
   <h1 class="wow fadeIn"> Hello there. I'm Amber. </h1>
-  <img class="wow fadeIn" src="linkedinPhoto.jpg"></img>
+  <img class="wow fadeIn" src="profilePic.jpg"></img>
   <h3><span>Software Engineer at Amazon</span></h3>
 </div>
   <hr>
@@ -270,7 +270,7 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
   <span>
   <div id="col-1">
   <h3>Would love to hear from you. </h3>
-    <a href="mailto:">
+    <a href="mailto:me@amberzlee.com">
     <button >Let's Talk </button>
     </a>
     <br><br><br>
@@ -284,8 +284,8 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
 <!-- footer --> 
     <div id="contactme" class="contact footer">
         <div class="logos wow fadeIn">
-        <a href="malito:"><img src='gmail.png'></img></a>
-        <a href="https://www.linkedin.com/pub/amber-lee/9a/a5a/991">
+        <a href="malito:me@amberzlee.com"><img src='mail.png'></img></a>
+        <a href="https://www.linkedin.com/in/amber-lee-991a5a9a"/>
         <img src="linkedin.png"></img> </a>
 	<a href="https://github.com/azlee">
           <img src="github.png"></img></a>
@@ -294,7 +294,7 @@ I'm Amber! I'm a software engineer current at Amazon working on the Middle Mile 
         <a href="https://www.flickr.com/photos/47510961@N03/">
           <img src="flickr.png"></img></a>
       </div>
-      <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2019 </p> 
+      <p style="padding-top:20px;">All rights reserved &copy; Amber Lee 2019 </p> 
       
 </div>
   <!-- /footer -->
@@ -349,9 +349,8 @@ $(window).resize(function() {
 <script> 
 // for navbar-add 'color' when it scrolls 
 var menuOffset = $(".menu").offset().top;
-var w= $(window).width();
 $(window).on("scroll touchmove", function () {
-    $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset && w > 800);
+    $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset);
     $('.menu').toggleClass('smaller', $(document).scrollTop() > menuOffset);
 });
 </script>
