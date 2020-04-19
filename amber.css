@@ -322,6 +322,24 @@ hr {
     overflow:hidden;
     margin:auto auto;
 }
+#cardDemo {
+    width:330px;
+    text-align:center;
+    height:330px;
+    box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
+    border-bottom:2px solid #fff;
+    border-right:2px solid #fff;
+    margin:auto auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background:url("cardsDemo.gif");
+    background-size:cover;
+    border-radius:5px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+}
 #box1 {  
     width:330px;
     text-align:center;
@@ -461,7 +479,7 @@ hr {
     -moz-transition: opacity .25s ease;
 }
 
-#box1:hover #overlay, #box2:hover #overlay, #box3:hover #overlay, #box4:hover #overlay, #box5:hover #overlay, #box6:hover #overlay, #box7:hover #overlay {
+#cardDemo:hover #overlay, #box1:hover #overlay, #box2:hover #overlay, #box3:hover #overlay, #box4:hover #overlay, #box5:hover #overlay, #box6:hover #overlay, #box7:hover #overlay {
     opacity:1;
 }
 #plus  h2{  
