@@ -13,9 +13,9 @@ body {
 /* 2. Menu */
 
 .menu {
+    padding-top: 30px;
     z-index: 100;
     text-align: right;
-    padding-top: 40px;
     position: fixed;
     width: 100%;
     background-color: transparent;
@@ -23,13 +23,14 @@ body {
     font-family: "Open Sans", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 700;
-    font-size: 12.5px;
+    font-size: 13.5px;
     color: #fff;
     letter-spacing: 2px;
     transition: background-color 500ms, padding 500ms, font-size 500ms;
 }
 .menu.shorter {
-    padding-top:2px;
+    font-size:12px;
+    padding-top:0px;
     background-color: rgba(0,0,0,.85);
 }
 .menu.opaque {
@@ -46,9 +47,9 @@ body {
     height:50px;
     float:left;
     margin:15px 25px;
-    filter: alpha(opacity=90);
-    -webkit-filter: grayscale(90%);
-    filter: grayscale(90%);
+    filter: alpha(opacity=10);
+    -webkit-filter: grayscale(10%);
+    filter: grayscale(10%);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
@@ -59,38 +60,29 @@ body {
     width: 30px;
     height: 30px;
 }
-.menu img:hover {
-    cursor:pointer;
-    filter: alpha(opacity=90);
-    -webkit-filter: grayscale(80%);
-    filter: grayscale(80%);
-}
 .menu ul {
     float: right;
     height: auto;
-    padding: 3px 8px;
     margin: 0px;
-    padding-top: 10px;
 }
 .menu li {
+    list-style-type: none;
+    float: left;
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 10px;
-    list-style-type: none;
-    float: left;
 }
 .menu a {
     text-decoration: none;
     color: rgba(255, 255, 255, .7);
-    padding: 8px 8px 8px 8px;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
 }
 .menu a:hover {
     color: #fff;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
 }
 .menu a#pull {
     display: none;
@@ -119,8 +111,10 @@ body {
     height:85%;
     height:500px;
     height: 85vh;
-    background: url("fields.jpg") center no-repeat;
+    margin-top: 0;
+    background: url("camera.jpg") 50% 0 no-repeat fixed;
     margin: 0 auto;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -129,6 +123,12 @@ body {
     font-family: "Lato", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-position: center;
+}
+
+#home span {
+    z-index: -100;
+    width: 100%;
+    display: table-cell;
 }
 
 #rayhome {
@@ -198,6 +198,9 @@ body {
     color: rgba(255, 255, 255, .85);
     color: #fff;
 }
+#rayhome h6 {
+    color: white;
+}
 .home-content {
     display: table;
     width: 100%;
@@ -248,7 +251,7 @@ body {
     color: #fff;
 }
 #intro h3 span {
-    background-color: rgba(35, 35, 32, .85);
+    background-color: #595959;
     padding: 20px 60px;
 }
 #intro h3 a {
@@ -498,7 +501,7 @@ hr {
 }
 #plus p {
     font-size:14px;
-    color:#52EEDB;
+    color: #beb6ce;
 }
 
 
@@ -641,7 +644,7 @@ hr {
     width: 100%;
     display: table;
     margin-top: 0;
-    background: url("cattails.jpg") 50% 0 no-repeat fixed;
+    background: url("fields.jpg") 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -788,7 +791,7 @@ hr {
     left: 0;
     width: 110px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     color: #fff;
 }
 .skillbar-title span {
@@ -1014,7 +1017,6 @@ hr {
     }
     .menu ul {
         font-size: 12px;
-        padding-top: 40px;
         margin-top: 0;
         display: none;
         height: auto;
@@ -1026,6 +1028,9 @@ hr {
         display: none;
     }
     .menu li {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
         padding: 15px 0;
         display: block;
         float: none;
@@ -1088,7 +1093,6 @@ hr {
         color: #fff;
     }
     #intro h3 span {
-        background-color: rgba(35, 35, 32, .85);
         padding:20px 10px;
     }
     #intro img {
