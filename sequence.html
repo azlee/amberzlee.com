@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="sitemap.xml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="NHtPhxBPCjMrpLaMdhQUciKYJeZNeXOGBvI1KDC8tdQ" />
+      <meta name="keywords" content="amber lee,
+University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee university of waterloo, design, mathematics, user interface, amber z lee, amber lee uwaterloo">
+    <meta name="description" content="University of Waterloo Student Amber Lee" />
+    <title> Amber Lee - Aspiring Developer/Designer</title>
+    <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="amber.css" rel="stylesheet">
+      <link href="animate.css" rel="stylesheet" >
+
+    <!--icon-->
+    <link rel="shortcut icon" href="icon.png" >
+    <!--font for quote-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+</head>=
+
+
+<script>
+//parallax background->change y position 
+$(document).ready(function(){
+   var $window = $(window);
+   $('section[data-type="parallax"]').each(function(){
+     var $bg = $(this);              
+      $(window).scroll(function() {                           
+        var yPos = -(($window.scrollTop() - $bg.offset().top)/ $bg.data('speed')); 
+        // background position
+        var coords = '50%'+ yPos + 'px';
+        // move the background
+        $bg.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script>
+
+
+<!--2. home page-->
+<section id="sequencehome">
+  <span>
+  <div class="home-content">
+<div class="main-text">
+  <h1 class="animated fadeInUp"> Sequence game </h1>
+  <h3 class="animated fadeIn delay1">Multiplayer online version of the board game </h3>
+</div>
+</span>
+</section>
+  <!--end homepage -->
+
+<div class="container-fluid">
+
+    <div class="row" style="padding:40px">
+    <div class="col-sm-6">
+        <h2> The idea </h2> <br>
+        <p class="lead" style="font-size:20px">
+            One of my favourite games to play is Sequence - a game where players try to create sequences of 5 tokens to win. In the game, two eyed Jack cards are wild cards and one eyed jacks allow players to remove other players tokens. Unlike some of my other favourite board games (ie. Codenames), Sequence was not one that I could find an online version for. Since we're in the middle of COVID-19 quarantine, I decided to create my own.
+    </div>
+    <div class="col-sm-6">
+        <img src="sequenceProduct.jpeg" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
+        <h2> Game Lobby </h2> <br>
+        <p class="lead" style="font-size:20px">
+          One necessary feature for a functional game was to have a game lobby where players can choose to either create a new game or join an existing game. To keep track of the states of each game room I set up a node application where the game server's role is to keep track of the state & apply moves that update the state. The clients and server interact solely through web socket events. 
+    </div>
+    <div class="col-sm-6">
+      <img src="sequenceLobby.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+      <img src="sequenceLobby2.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
+        <h2> Highlighting cards on board </h2> <br>
+        <p class="lead" style="font-size:20px">
+         One of the challenges with playing the board game Sequence is that it can be diffiult to locate your cards on the board (the board is 10 x 10 cards). To mitigate this, I added a toggle feature for the cards so your cards would be highlighted on the board (assuming there's no tokens already on the card).
+        </p>
+    </div>
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="sequenceToggle.png" style="padding:15px"> 
+        <img src="sequenceToggle2.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
+        <h2> Sequence highlighting </h2> <br>
+        <p class="lead" style="font-size:20px">
+          Sequences are highlighted in black to make it easier for players to spot. </p>
+    </div>
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="sequence3.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
+        <h2> Winner modal </h2> <br>
+    </div>
+    <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
+        <img src="sequenceWinner.png" style="padding:15px"> 
+    </div>
+  </div>
+  <hr>
+</div>
