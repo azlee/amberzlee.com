@@ -772,6 +772,41 @@ hr {
     -ms-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
 }
+.demo {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    display: table;
+    margin: 0 left;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+    display: block;
+    height: 45px;
+    width: 150px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: #111;
+    border: 2px #111 solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: 0;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.demo:hover {
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+}
 #workwithme a {
     text-decoration: none;
 }
