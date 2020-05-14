@@ -112,7 +112,7 @@ body {
     height:500px;
     height: 85vh;
     margin-top: 0;
-    background: url("camera.jpg") 50% 0 no-repeat fixed;
+    background: url("../imgs/camera.jpg") 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -137,7 +137,7 @@ body {
     height:85%;
     height:500px;
     height: 85vh;
-    background: url("raytrace.jpg") center no-repeat;
+    background: url("../imgs/raytrace.jpg") center no-repeat;
     margin: 0 auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -155,7 +155,7 @@ body {
     height:65%;
     height:500px;
     height: 65vh;
-    background: url("sequence.jpg") center no-repeat;
+    background: url("../imgs/sequence.jpg") center no-repeat;
     margin: 0 auto;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -379,7 +379,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("sequenceGame3.png");
+    background:url("../imgs/sequenceGame3.png");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -397,7 +397,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("cardsAgainstHumanityScreenshot.png");
+    background:url("../imgs/cardsAgainstHumanityScreenshot.png");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -415,7 +415,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("thirdeye.gif");
+    background:url("../imgs/thirdeye.gif");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -433,7 +433,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("design.gif");
+    background:url("../imgs/design.gif");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -451,7 +451,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("c++game.jpg");
+    background:url("../imgs/c++game.jpg");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -469,7 +469,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("eventure.gif");
+    background:url("../imgs/eventure.gif");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -487,7 +487,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("javaGame.png");
+    background:url("../imgs/javaGame.png");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -505,7 +505,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("jsketch.gif");
+    background:url("../imgs/jsketch.gif");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -523,7 +523,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background:url("reflectAndRefract.png");
+    background:url("../imgs/reflectAndRefract.png");
     background-size:cover;
     border-radius:5px;
     margin-left:auto;
@@ -541,6 +541,7 @@ hr {
     height:100%;
     -webkit-transition: opacity .25s ease;
     -moz-transition: opacity .25s ease;
+    transition: opacity .25s ease;
 }
 
 #cardDemo:hover #overlay, #sequenceDemo:hover #overlay, #box1:hover #overlay, #box2:hover #overlay, #box3:hover #overlay, #box4:hover #overlay, #box5:hover #overlay, #box6:hover #overlay, #box7:hover #overlay {
@@ -585,7 +586,7 @@ hr {
     opacity:1;
 }
 #thirdeyeproject {
-    background: url("thirdeye.gif");
+    background: url("../imgs/thirdeye.gif");
 }
 #portfolio img {
     display:table-cell;
@@ -705,7 +706,7 @@ hr {
     width: 100%;
     display: table;
     margin-top: 0;
-    background: url("fields.jpg") 50% 0 no-repeat fixed;
+    background: url("../imgs/fields.jpg") 50% 0 no-repeat fixed;
     margin: 0 auto;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -844,7 +845,7 @@ hr {
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     font-weight: 300;
-    font-color: #111;
+    color: #111;
     height: 50px;
     margin-top: 50px;
     font-size: 16px;

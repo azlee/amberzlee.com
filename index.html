@@ -12,14 +12,11 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
     <meta name="viewport" content="width=device-width, initial=scale=1.0, maximum-scale=1.0,user-scable=no">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
-    <link href="amber.css" rel="stylesheet">
-    <link href="animate.css" rel="stylesheet" >
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="bootstrap.css">
-
+    <link href="style/amber.css" rel="stylesheet">
+    <link href="style/animate.css" rel="stylesheet" >
 
     <!--icon-->
-    <link rel="shortcut icon" href="icon.png" >
+    <link rel="shortcut icon" href="imgs/icon.png" >
     <!--font for quote-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -37,7 +34,7 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
     <a href="resume.pdf" target="_blank"><li>resume</li></a>
     <a href="#contactme"><li>contact me</li></a>
     </ul>
-    <a href="#" id="pull"><img src="navicon.png"></img></a>
+    <a href="#" id="pull"><img src="imgs/navicon.png"></img></a>
   </nav>
 <!--end navigation bar-->
 
@@ -75,7 +72,7 @@ $(document).ready(function(){
 <div id="intro">
   <div>
   <h1 class="wow fadeIn"> Hello there. I'm Amber. </h1>
-  <img class="wow fadeIn" src="profilePic.jpg"></img>
+  <img class="wow fadeIn" src="imgs/profilePic.jpg"></img>
     <h3><span>Software Engineer at Amazon</span></h3>
 </div>
   <hr>
@@ -221,19 +218,19 @@ $(document).ready(function(){
 <div id="myinterests" class="wow fadeInUp">
   <h3>My Interests</h3>
 <div id="icon">
-  <img src="dev.png"></img>
+  <img src="imgs/dev.png"></img>
   Software Development
 </div>
   <div id="icon">
-  <img src="art.png"></img>
+  <img src="imgs/art.png"></img>
   Design
 </div>
 <div id="icon">
-  <img src="web.png"></img>
+  <img src="imgs/web.png"></img>
   Web 
 </div>
 <div id="icon">
-  <img src="heart2.png"></img>
+  <img src="imgs/heart2.png"></img>
   Healthy Living
 </div>
 </div>
@@ -318,7 +315,7 @@ $(document).ready(function(){
     <br><br><br>
   </div>
   <div id="col-2">
-    <img class="wow fadeIn" src="laptop.png"></img>
+    <img class="wow fadeIn" src="imgs/laptop.png"></img>
   </div>
 </span>
   </section>
@@ -326,15 +323,15 @@ $(document).ready(function(){
 <!-- footer --> 
     <div id="contactme" class="contact footer">
         <div class="logos wow fadeIn">
-        <a href="malito:me@amberzlee.com"><img src='mail.png'></img></a>
+        <a href="malito:me@amberzlee.com"><img src='imgs/mail.png'></img></a>
         <a href="https://www.linkedin.com/in/amber-lee-991a5a9a"/>
-        <img src="linkedin.png"></img> </a>
-	<a href="https://github.com/azlee">
-          <img src="github.png"></img></a>
+        <img src="imgs/linkedin.png"></img> </a>
+	      <a href="https://github.com/azlee">
+          <img src="imgs/github.png"></img></a>
         <a href="https://www.facebook.com/amber.lee.31924">
-        <img src="facebook.png"></img></a>
+        <img src="imgs/facebook.png"></img></a>
         <a href="https://www.flickr.com/photos/47510961@N03/">
-          <img src="flickr.png"></img></a>
+          <img src="imgs/flickr.png"></img></a>
       </div>
       <p style="padding-top:28px;">All rights reserved &copy; Amber Lee 2020 </p> 
       
@@ -344,8 +341,8 @@ $(document).ready(function(){
 <!--close main content-->
 
 <!--Scripts-->
-<script src="jquery.appear.js"></script>
-<script src="wow.min.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/wow.min.js"></script>
 <script>
  new WOW().init();
 </script>
@@ -379,16 +376,17 @@ $(function() {
 
 <script>
 $(function() {
-$(window).resize(function() {
-  var w= $(window).width();
-  if (w>500 && menu.is(':hidden')) {
-    menu.removeAttr('style');
-  }
+  $(window).resize(function() {
+    var w= $(window).width();
+    if (w>500 && menu.is(':hidden')) {
+      menu.removeAttr('style');
+    }
+  })
 });
 </script>
 
 <script> 
-// for navbar-add 'color' when it scrolls 
+/* Add color to nav bar when scroll */
 var menuOffset = $(".menu").offset().top;
 $(window).on("scroll touchmove", function () {
     $('.menu').toggleClass('shorter', $(document).scrollTop() > menuOffset);
@@ -397,4 +395,3 @@ $(window).on("scroll touchmove", function () {
 </script>
 
 <!--end scripts-->
-

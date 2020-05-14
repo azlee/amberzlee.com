@@ -13,37 +13,16 @@ University of Waterloo, Amber Lee waterloo, Computer Science, Amber lee universi
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
     
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="imgs/https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="imgs/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="amber.css" rel="stylesheet">
-      <link href="animate.css" rel="stylesheet" >
+    <link href="style/amber.css" rel="stylesheet">
+      <link href="style/animate.css" rel="stylesheet" >
 
     <!--icon-->
-    <link rel="shortcut icon" href="icon.png" >
-    <!--font for quote-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="imgs/icon.png" >
  
 </head>
-
-<!--1. navigation bar-->
-<!-- <body>
-
-    <nav class="menu">
-      <a href="#home" class="smoothScroll"><img class="navIcon" src="icon.png"></a>
-        <ul> 
-        <li ><a id="nav-home" href="#home" class="smoothScroll"  >home</a></li>
-        <li><a href="#portfolio" class="smoothScroll">portfolio</a></li>
-        <li><a href="#aboutme" class="smoothScroll"  >about me</a></li>
-       <li> <a href="resume.pdf" target="_blank" >resume</a></li>
-        <li><a href="#contactme" class="smoothScroll"  >contact me</a></li>
-    </ul>
-    <a href="#" id="pull"><img src="navicon.png"></img></a>
-</nav> -->
-<!--end navigation bar-->
-
 
 <script>
 //parallax background->change y position 
@@ -86,7 +65,7 @@ $(document).ready(function(){
             Reflection was my extra objective for A4. It simply involved recursively issuing secondary reflection rays from the point of intersection if the object has a non-zero reflectivity factor. The colour was blended with the colour produced by local illumination.
     </div>
     <div class="col-sm-6">
-        <img src="reflect.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+        <img src="imgs/reflect.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
     </div>
   </div>
   <hr >
@@ -151,8 +130,8 @@ $(document).ready(function(){
         </table>
     </div>
     <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="macho-cows2.png" style="padding:15px"> 
-        <img src="macho-cows.png" style="padding:15px"> 
+        <img src="imgs/macho-cows2.png" style="padding:15px"> 
+        <img src="imgs/macho-cows.png" style="padding:15px"> 
     </div>
   </div>
   <hr >
@@ -164,8 +143,8 @@ $(document).ready(function(){
             I implemented cones and cylinders as the additional primitives. This involved created new subclasses of primitives and implementing their intersection methods as well as creating new lua commands to create these primitives. I did ray-cylinder intersection by referencing <a href = "http://woo4.me/wootracer/cylinder-intersection/">here</a> and ray-cone intersection by referencing <a href="http://mrl.nyu.edu/~dzorin/rend05/lecture2.pdf">this</a>. </p>
     </div>
     <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="cone.png" style="padding:15px"> 
-        <img src="cylinder.png" style="padding:15px"> 
+        <img src="imgs/cone.png" style="padding:15px"> 
+        <img src="imgs/cylinder.png" style="padding:15px"> 
     </div>
   </div>
   <hr>
@@ -179,7 +158,7 @@ $(document).ready(function(){
             Bilinear filtering was used (referenced <a href="https://en.wikipedia.org/wiki/Bilinear_filtering"> here </a>). This was used to smooth the textures when they're displayed at different sizes then they are. Bilinear filtering performs bilinear interpolation between the four texels nearest the point the pixel represents. I originally did not have bilinear filtering (simply interpolated the UV coordinates onto the texture map) but when I did bump mapping I noticed how badly the 'bumps' looked so I needed a different approach.  </p>
     </div>
     <div class="col-sm-6"  style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="texture.png" style="padding:15px"> 
+        <img src="imgs/texture.png" style="padding:15px"> 
     </div>
   </div>
   <hr>
@@ -191,7 +170,7 @@ $(document).ready(function(){
             Bump mapping was implemented using the same raster file as texture mapping. With bump mapping we are modifying the surface normal at intersection. We do this by treating the texture map as if it's a single-valued height function. We don't use the value of the function but the partial derivatives to calculate the perturbed normal (to do this you need the tangent vectors to the normal which can be calculated using cross product operation). This adds realism to the objects without actually changing their geometry.</p>
     </div>
     <div class="col-sm-6">
-        <img src="bumpMapSample.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+        <img src="imgs/bumpMapSample.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
     </div>
   </div>
   <hr>
@@ -239,8 +218,8 @@ $(document).ready(function(){
         <br> <br>
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="refract2.png" style="padding:15px;">
-        <img src="reflectAndRefract.png"  style="padding:15px;">
+        <img src="imgs/refract2.png" style="padding:15px;">
+        <img src="imgs/reflectAndRefract.png"  style="padding:15px;">
     </div>
   </div>
   <hr>
@@ -264,10 +243,10 @@ $(document).ready(function(){
         The image on the left is rendered using a point source light. The second is generated using 5 randomized rays over a spherical light source, third with 10 rays and fourth image with 100 rays.
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="notSoft.png" style="padding:15px"> 
-        <img src="softShadow5rays.png" style="padding:15px"> 
-        <img src="softShadow10rays.png" style="padding:15px"> 
-        <img src="soft100rays.png" style="padding:15px"> 
+        <img src="imgs/notSoft.png" style="padding:15px"> 
+        <img src="imgs/softShadow5rays.png" style="padding:15px"> 
+        <img src="imgs/softShadow10rays.png" style="padding:15px"> 
+        <img src="imgs/soft100rays.png" style="padding:15px"> 
     </div>
   </div>
   <hr>
@@ -281,7 +260,7 @@ $(document).ready(function(){
             This animation consists of 100 images. I created a Bash script to modify one of my lua files to move the balloons up by half a pixel for each file and then render all the images. 
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="animate.gif" style="padding:15px"> 
+        <img src="imgs/animate.gif" style="padding:15px"> 
     </div>
   </div>
   <hr>
@@ -294,7 +273,7 @@ $(document).ready(function(){
             <br> <br>
     </div>
     <div class="col-sm-8" style="display:inline-block;margin-left:auto;margin-right:auto;text-align:center">
-        <img src="finalScene.png" style="padding:15px"> 
+        <img src="imgs/finalScene.png" style="padding:15px"> 
     </div>
   </div>
   <hr>
