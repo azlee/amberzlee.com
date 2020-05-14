@@ -65,7 +65,7 @@ $(document).ready(function(){
     <div class="col-sm-6">
         <h2> The idea </h2> <br>
         <p class="lead" style="font-size:20px">
-            One of my favourite games to play is Sequence - a game where players try to create sequences of 5 tokens to win. In the game, two eyed Jack cards are wild cards and one eyed jacks allow players to remove other players tokens. Unlike some of my other favourite board games (ie. Codenames), Sequence was not one that I could find an online version for. Since we're in the middle of COVID-19 quarantine, I decided to create my own.
+            One of my favourite games to play is Sequence - a game where players try to create sequences of 5 tokens to win. In the game, two eyed Jack cards are wild cards and one eyed jacks allow players to remove other players tokens. Other than that, the rules are fairly simple. Unlike some of my other favourite board games (ie. Codenames), Sequence was not one that I could find an online version for. Since we're in the middle of COVID-19 quarantine which makes it impossible to play games with friends in person, I decided to create my own online version.
     </div>
     <div class="col-sm-6">
         <img src="sequenceProduct.jpeg" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
@@ -77,7 +77,7 @@ $(document).ready(function(){
     <div class="col-sm-6">
         <h2> Game Lobby </h2> <br>
         <p class="lead" style="font-size:20px">
-          One necessary feature for a functional game was to have a game lobby where players can choose to either create a new game or join an existing game. To keep track of the states of each game room I set up a node application where the game server's role is to keep track of the state & apply moves that update the state. The clients and server interact solely through web socket events. 
+          One necessary feature for a functional game was to have a game lobby where players can choose to either create a new game or join an existing game. To keep track of the states of each game room I set up a node.js application where the game server's role is to keep track of the game states & apply moves that update the state. The clients and server interact solely through web socket events. 
     </div>
     <div class="col-sm-6">
       <img src="sequenceLobby.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
@@ -114,9 +114,9 @@ $(document).ready(function(){
 
   <div class="row" style="padding:40px">
     <div class="col-sm-6">
-        <h2> Winner modal </h2> <br>
+        <h2> Play the game </h2> <br>
         <p class="lead" style="font-size:20px">
-        Click for a live demo of the game!<br>
+        Click to play the game!<br>
         <a href="http://sequencegame.azurewebsites.net/"><button class="demo">Live demo</button></a>
       </p>
     </div>
