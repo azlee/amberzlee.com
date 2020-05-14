@@ -1,3 +1,4 @@
 php_value auto_prepend_file none
 php_value auto_append_file none
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteRule ^(.*)/index$ http://domain.tld/$1 [R=301,L]
