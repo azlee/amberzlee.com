@@ -1,0 +1,339 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dbe7e7;
+}
+
+h1 { 
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+.card {
+    border-radius: 1rem;
+    width: 7rem;
+    height: 10.5rem;
+    padding: .7rem;
+    margin: 0.3rem;
+    font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
+    font-weight: bolder;
+    font-size:.95rem;
+    font-variant: normal;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.question {
+    color: white;
+    background-color: black;
+}
+
+.answer {
+    color: black;
+    background-color: white;
+    border: .1rem solid #111111;
+}
+
+.nonactive-answer {
+    color: black;
+    background-color: white;
+    cursor: default;
+    border: .05rem solid #111111;
+}
+
+.answer-winner {
+    color: black;
+    background-color: white;
+    border: .05rem solid #111111;
+}
+
+.back {
+    font-size: 1.2rem;
+    border: .05rem solid #111111;
+}
+
+.placeholder {
+    color: #8c8c8c;
+    background-color: #d9d9d9;
+    border: .15rem dashed #8c8c8c;
+    cursor: default;
+}
+
+.placeholder-player-name {
+    color: #8c8c8c;
+    background-color: #d9d9d9;
+    border: .15rem dashed #8c8c8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer:hover {
+    filter: drop-shadow(1rem 1rem 1rem gray);
+}
+
+.card-empty {
+    background-color: gray;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 15rem;
+    color: rgb(224, 214, 214);
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+.winning-card {
+    box-shadow: 0 0 1rem #70db70;
+}
+
+.winner-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a6a6a6;
+}
+
+#active-question {
+    width: 8rem;
+    height: 12rem;
+    font-size: 1rem;
+    cursor: default;
+}
+
+#active-player-cards {
+    justify-content: center;
+}
+
+#answer-draw-pile {
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
+}
+
+#answer-draw-pile:hover {
+
+    filter: drop-shadow(1rem 1rem 1rem gray);
+}
+
+#question-draw-pile {
+    cursor: pointer;
+    margin-left: 7rem;
+    box-shadow: 1.5px 1.5px rgba(136, 136, 136, 0.5);
+    filter: drop-shadow(.1rem .1rem 0rem #262626) drop-shadow(.2rem .2em 0rem #4d4d4d) drop-shadow(.3rem .3rem 0rem #737373) drop-shadow(.4rem .4rem 0rem #8c8c8c);
+}
+
+#question-draw-pile:hover {
+    filter: drop-shadow(.1rem .1rem .1rem #262626) drop-shadow(.2rem .2em .1rem #4d4d4d) drop-shadow(.3rem .3rem .1rem #737373) drop-shadow(.4rem .4rem .1rem #8c8c8c);
+}
+
+#notification {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#judge-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: .3rem;
+}
+
+#score-and-round-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#score-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+    margin-right: .5rem;
+    font-size: .75rem;
+}
+
+#round-number {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+#score-board table {
+    border-collapse: collapse;
+}
+
+#score-board th {
+    height: .5rem;
+    width: 4rem;
+    background-color: #9acece;
+}
+
+#score-board td {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+#score-board th, td {
+    border: 1px solid black;
+    padding: .2rem .2rem;
+}
+
+.card-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.card-combo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin: 1.5rem 1.5rem;
+}
+
+#game-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.player-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player-preview .card {
+    width: 3rem;
+    height: 4.5rem;
+    font-size: .7rem; 
+    margin: 1rem 1rem;
+    border: .05rem solid #1a1a1a !important;
+    background-color: #9acece;
+    color: #1a1a1a;
+    cursor: pointer;
+}
+
+.player-preview .card:hover {
+    filter: drop-shadow(.5rem .5rem .5rem gray);
+}
+
+#currentPlayer {
+    margin-top: 1.3rem;
+    margin-left: 1.3rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  padding-top: 10rem;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal img {
+    width: 50%;
+}
+
+.modal .card {
+    text-align:left;
+    width: 7rem;
+    height: 10.5rem;
+    font-size: .9rem; 
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  font-weight: bold;
+  border: 1px solid #888;
+  border-radius: 1rem; 
+  width: 66%;
+}
+
+.modal-content #card {
+    text-align: left !important;
+}
+
+.modal-content form {
+    font-size: 1.5rem;
+}
+
+.modal-content label {
+    margin: 1rem 1rem;
+    font-size: 1.25rem;
+}
+
+.modal-content input {
+    font-size: 1.25rem;
+    margin: .75rem .75rem;
+}
+
+.modal-content button {
+    font-weight: bold;
+    letter-spacing: .05rem;
+    background-color: #bbdddd;
+    border-radius: .4rem;
+    margin: .75rem .75rem 1.2rem;
+    padding: 1rem 1.3rem;
+    cursor: pointer;
+    font-size: .8rem;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+.modal-content button:hover {
+    background-color: #99cccc;
+}
+
+/* The Close Button */
+.close {
+  margin-right: .4rem;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
