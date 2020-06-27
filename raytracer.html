@@ -46,7 +46,6 @@ $(document).ready(function(){
   <div class="home-content">
 <div class="main-text">
   <h1 class="animated fadeInUp"> Ray Tracer </h1>
-  <h3 class="animated fadeIn delay1">Final Project Demo for CS488 </h3>
   <h6> Note: Image from Ray Tracing in One Weekend book </h6>
 </div>
 </div>
@@ -57,16 +56,29 @@ $(document).ready(function(){
 <div class="container-fluid">
 
     <div class="row" style="padding:40px">
-    <div class="col-sm-6">
+        <div class="col-sm-6">
+          <h2> What is ray tracing? </h2> <br>
+          <p class="lead" style="font-size:20px">
+              Ray tracing is a common technique for rendering images where light ray paths are traced. In short you cast primary rays from eye position through every pixel in an image plane. Then you calculate the intersection of the rays with scene geometry. Next, you cast shadow rays from the intersection points to the light sources. Finally, we assign a color to the pixels based on the intersections. <br><br>
+
+              The above is the minimum for ray tracing. There are many extensions that can be implemented in ray tracing. Some of the extensions are described here with short implementation details.
+        </div>
+        <div class="col-sm-6">
+          <img src="imgs/whatIsRayTracer.gif" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+        </div>
+      </div>
+
+    <div class="row" style="padding:40px">
+      <div class="col-sm-6">
         <h2> 0. Reflection </h2> <br>
         <p class="lead" style="font-size:20px">
             Reflection was my extra objective for A4. It simply involved recursively issuing secondary reflection rays from the point of intersection if the object has a non-zero reflectivity factor. The colour was blended with the colour produced by local illumination.
-    </div>
-    <div class="col-sm-6">
+      </div>
+      <div class="col-sm-6">
         <img src="imgs/reflect.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+      </div>
     </div>
-  </div>
-  <hr >
+    <hr>
 
   <div class="row" style="padding:40px">
     <div class="col-sm-6">
