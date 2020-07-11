@@ -69,6 +69,18 @@ $(document).ready(function(){
 
   <div class="row" style="padding:40px">
     <div class="col-sm-6">
+        <h2> Game State </h2> <br>
+        <p class="lead" style="font-size:20px">
+          In order to keep track of components in the game such as the players & their teams, the board & tokens occupied, sequences so far, whose turn it is, etc we have a Game state. For my Sequence application, the Game state is simply a JavaScript object that keeps track of everything in the game. Whenever actions in the game occur (ex. players take turns, new player joins, etc) the Game state is updated. The game server is responsible for updating the Game state and emiting it back to the clients. The only responsibility on the client side is to render the UI components based on the game state.
+    </div>
+    <div class="col-sm-6">
+      <img src="imgs/gameState.png" style="padding:15px;display:block;margin-left:auto;margin-right:auto"> 
+    </div>
+  </div>
+  <hr >
+
+  <div class="row" style="padding:40px">
+    <div class="col-sm-6">
         <h2> Game Lobby </h2> <br>
         <p class="lead" style="font-size:20px">
           One necessary feature for a functional game was to have a game lobby where players can choose to either create a new game or join an existing game. To keep track of the states of each game room I set up a node.js application where the game server's role is to keep track of the game states & apply moves that update the state. The clients and server interact solely through web socket events. 
