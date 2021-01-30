@@ -162,6 +162,11 @@ const NotificationType = {
     DRAW_NEW_QUESTION_CARD: "Draw new question card to start new round"
 }
 
+const GameVersion = {
+    PG:"PG",
+    PG_13: "PG-13",
+}
+
 /****************************************************************************
  * 
  * 
@@ -218,14 +223,15 @@ function getPlayer(playerId) {
  * 
  * 
  ****************************************************************************/
-var socket = io('http://games.amberzlee.com:61001/');
+var socket = io();
 
 /**
  * Create a new game with first player with name
  * @param {str} name - name of first player
+ * @param {GameVersion} version - rating of game - PG vs PG-13
  */
-function createGame(name) {
-    socket.emit('createGame', { name: name.trim() });
+function createGame(name, version) {
+    socket.emit('createGame', { name: name.trim(), version: version });
     playerId = 0;
     initializeQuestionDrawPile();
     socket.on('createGameSuccess', function(gameRoom) {
@@ -399,8 +405,7 @@ function renderScores() {
  */
 function renderRoundNumber() {
     var roundDiv = document.getElementById('round-number');
-    roundDiv.style.border = '.13rem solid #4d4d4d';
-    roundDiv.innerHTML = 'Room ' + GameState.gameId + ' | ' + 'Round ' + GameState.roundNum; 
+    roundDiv.innerHTML = 'Room ' + GameState.gameId; 
 }
 
 /**
@@ -764,12 +769,30 @@ function createPlayForm(newGame) {
     nameInput.placeholder = "ENTER YOUR NAME";
     var img = document.createElement('img');
     img.src = 'geneWilder2.jpg';
+    // select for clean/non clean version
+    var cleanLabel = document.createElement('label');
+    cleanLabel.innerHTML = 'Rating:';
+    cleanLabel.id = 'cleanLabel';
+    var cleanSelect = document.createElement('select');
+    cleanSelect.id = 'cleanSelect';
+    for (const key in GameVersion) {
+        var option = document.createElement('option');
+        console.log(GameVersion[key]);
+        option.value = GameVersion[key];
+        option.innerHTML = GameVersion[key];
+        cleanSelect.appendChild(option);
+    }
     formDiv.appendChild(img);
     formDiv.appendChild(document.createElement('br'));
     formDiv.appendChild(document.createElement('br'));
     formDiv.appendChild(nameLabel);
     formDiv.appendChild(nameInput);
     formDiv.appendChild(document.createElement('br'));
+    if (newGame) {
+        formDiv.appendChild(cleanLabel);
+        formDiv.appendChild(cleanSelect);
+        formDiv.appendChild(document.createElement('br'));
+    }
     if (!newGame) {
         var codeLabel = document.createElement('label');
         codeLabel.innerHTML = 'Room code: ';
@@ -794,7 +817,7 @@ function createPlayForm(newGame) {
     button.disabled = true;
     if (newGame) {
         button.addEventListener("click", function(event) {
-            createGame(document.getElementById('nameInput').value);
+            createGame(document.getElementById('nameInput').value, document.getElementById('cleanSelect').value);
         });
     } else {
         button.addEventListener("click", function(event) {
@@ -816,7 +839,7 @@ function addDisableEnableButton() {
   
     function validateNextButton() {
       var isNameEntered = $('#nameInput').val().trim() !== '';
-      var isNumericName = /^[\s\S]*$/g.test($('#nameInput').val());
+      var isNumericName = /^[a-zA-Z]*$/g.test($('#nameInput').val());
       var isRoomCodeEntered = !roomCodeButton || ($('#roomCodeInput').val().trim().length === 4);
       $('#joinOrCreateGame').prop('disabled', !isNameEntered || !isRoomCodeEntered || !isNumericName);
     }
