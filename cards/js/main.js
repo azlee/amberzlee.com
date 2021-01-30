@@ -777,7 +777,6 @@ function createPlayForm(newGame) {
     cleanSelect.id = 'cleanSelect';
     for (const key in GameVersion) {
         var option = document.createElement('option');
-        console.log(GameVersion[key]);
         option.value = GameVersion[key];
         option.innerHTML = GameVersion[key];
         cleanSelect.appendChild(option);
