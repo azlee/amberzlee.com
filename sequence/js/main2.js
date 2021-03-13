@@ -192,7 +192,7 @@ function getRandomWinnerGif() {
 * 
 ****************************************************************************/
 
-var socket = io('http://games.amberzlee.com:61000/');
+var socket = io('https://games.amberzlee.com:61000/');
 console.log(socket)
 
 /**
