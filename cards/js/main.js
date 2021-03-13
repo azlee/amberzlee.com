@@ -228,7 +228,7 @@ function getPlayer(playerId) {
  * 
  * 
  ****************************************************************************/
-var socket = io('http://games.amberzlee.com:61001/');
+var socket = io('https://games.amberzlee.com:61001/');
 
 /**
  * Create a new game with first player with name
