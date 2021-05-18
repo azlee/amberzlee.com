@@ -1,352 +1,320 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title>Amber Lee</title>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
-        rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <style>
-            html, body, main, section, header, ul, p, h1, h2, h3 {
-              font-family: 'Open Sans', 'sans-serif';
-              font-size: 14px;
-              line-height: 1.4;
-              margin: 0; padding: 0;
-              display: block;
-            }
-            
-            ::selection {
-              color: #fff;
-              background: #e48a8a; /* WebKit/Blink Browsers */
-            }
-            ::-moz-selection {
-              color: #fff;
-              background: #e48a8a; /* Gecko Browsers */
-            }
-            
-            p::selection {
-              color: #fff;
-            }
-            
-            a {
-              color: #3da4ab;
-              text-decoration: none;
-            }
-            
-            a:visited {
-              color: #3da4ab;
-            }
-            
-            a:hover {
-              text-decoration: underline;
-            }
-            
-            h1 {
-              text-transform: uppercase;
-            }
-            
-            h2 {
-              text-transform: uppercase;
-              color: #898989;
-              font-size: 2em;
-              position: relative;
-              font-weight: 400;
-            }
-            
-            h3, .tenure {
-              font-size: 1.5em;
-              font-weight: 400;
-            }
-            
-            h3 {
-              margin-top: 0;
-              margin-bottom: 5px;
-              /*width: 85%;*/
-              float: left;
-            }
-            
-            table {
-              width: 100%;
-              text-transform: uppercase;
-            }
-            
-            td:first-child {
-              letter-spacing: 2px;
-              color: #bd5b5b;
-              font-size: 20px;
-            }
-            
-            td:last-child {
-              text-align: justify; /* HTML justification sucks, but in this case... */
-            }
-            
-            hr {
-              display: none;
-            }
-            
-            main {
-              padding: 15px;
-              max-width: 800px;
-              margin: 0 auto;
-              margin-bottom: 40px;
-            }
-            
-            section {
-              margin-top: 2em;
-            }
-            
-            section > div {
-              margin-top: 2em;
-              overflow: hidden; /* Clear floated children */
-            }
-            
-            section > div p {
-              clear: both;
-            }
-            
-            section > header {
-              position: relative;
-            }
-            
-            p + ul {
-              margin: 1em;
-            }
-            
-            ul {
-              clear: both;
-            }
-            
-            li {
-              margin-left: 2em;
-            }
-            
-            p, li {
-              text-align: justify;
-            }
-            
-            .tenure {
-              float: right;
-              color: #6F6F6F;
-              background-color: #F5F5F5;
-              border-radius: 6px;
-              padding: 4px 6px;
-              font-size: 85%;
-              font-weight: 600;
-              margin-top: 3px;
-            }
-            
-            .location {
-              border: #e2aaaa dashed 1px;
-              background-color: #ffffff;
-              padding: 3px 6px;
-              border-radius: 6px;
-              float: right;
-              margin-right: 5px;
-              float: right;
-              font-size: 85%;
-              color: #717171;
-              font-weight: 600;
-              margin-top: 3px;
-            }
-            
-            span.keywords {
-              font-size: 12px;
-              color: #B16666;
-            }
-            
-            thead {
-              display: none;
-            }
-            
-            main > header {
-              width: 100%;
-              float: left;
-              margin-bottom: 1em;
-            }
-            
-            h1 {
-              float: left;
-            }
-            
-            h1, h2, .label {
-              font-size: 2.5em;
-              text-transform: uppercase;
-              font-weight: 300;
-              font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Lato', 'sans-serif'
-            }
-            
-            #contact {
-             clear: both;
-             float: right;
-             margin-top: 2px;
-            }
-            
-            #contact span + span {
-              margin-left: 10px;
-            }
-            
-            header > span.fa {
-              text-align: center;
-              margin-right: 3px;
-              position: absolute;
-              width: 40px;
-              top: 14px;
-              font-size: 30px;
-              /*transform: translateX(-110%); PDF no likey */
-              margin-left: -50px;
-              color: #DADADA;
-            }
-            
-            .label {
-              float: right;
-              color: #DADADA;
-            }
-            
-            #summary {
-              color: #717171;
-              font-size: 1em;
-              margin-top: 6em;
-            }
-            
-            #skills td {
-              padding-top: 7px;
-              padding-bottom: 7px;
-            }
-            
-            #references > p, #references > p > a {
-              color: #961e1e;
-              text-align: center;
-              margin: 30px;
-              font-weight: bold;
-              letter-spacing: 2px;
-              text-transform: uppercase;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <main>
+   <head>
+      <meta charset="utf-8">
+      <title>Amber Lee</title>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
+         rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <style>
+         html, body, main, section, header, ul, p, h1, h2, h3 {
+         font-family: 'Open Sans', 'sans-serif';
+         font-size: 14px;
+         line-height: 1.4;
+         margin: 0; padding: 0;
+         display: block;
+         }
+         ::selection {
+         color: #fff;
+         background: #e48a8a; /* WebKit/Blink Browsers */
+         }
+         ::-moz-selection {
+         color: #fff;
+         background: #e48a8a; /* Gecko Browsers */
+         }
+         p::selection {
+         color: #fff;
+         }
+         a {
+         color: #3da4ab;
+         text-decoration: none;
+         }
+         a:visited {
+         color: #3da4ab;
+         }
+         a:hover {
+         text-decoration: underline;
+         }
+         h1 {
+         text-transform: uppercase;
+         }
+         h2 {
+         text-transform: uppercase;
+         color: #898989;
+         font-size: 2em;
+         position: relative;
+         font-weight: 400;
+         }
+         h3, .tenure {
+         font-size: 1.5em;
+         font-weight: 400;
+         }
+         h3 {
+         margin-top: 0;
+         margin-bottom: 5px;
+         /*width: 85%;*/
+         float: left;
+         }
+         table {
+         width: 100%;
+         text-transform: uppercase;
+         }
+         td:first-child {
+         letter-spacing: 2px;
+         color: #bd5b5b;
+         font-size: 20px;
+         }
+         td:last-child {
+         text-align: justify; /* HTML justification sucks, but in this case... */
+         }
+         hr {
+         display: none;
+         }
+         main {
+         padding: 15px;
+         max-width: 800px;
+         margin: 0 auto;
+         margin-bottom: 40px;
+         }
+         section {
+         margin-top: 2em;
+         }
+         section > div {
+         margin-top: 2em;
+         overflow: hidden; /* Clear floated children */
+         }
+         section > div p {
+         clear: both;
+         }
+         section > header {
+         position: relative;
+         }
+         p + ul {
+         margin: 1em;
+         }
+         ul {
+         clear: both;
+         }
+         li {
+         margin-left: 2em;
+         }
+         p, li {
+         text-align: justify;
+         }
+         .tenure {
+         float: right;
+         color: #6F6F6F;
+         background-color: #F5F5F5;
+         border-radius: 6px;
+         padding: 4px 6px;
+         font-size: 85%;
+         font-weight: 600;
+         margin-top: 3px;
+         }
+         .location {
+         border: #e2aaaa dashed 1px;
+         background-color: #ffffff;
+         padding: 3px 6px;
+         border-radius: 6px;
+         float: right;
+         margin-right: 5px;
+         float: right;
+         font-size: 85%;
+         color: #717171;
+         font-weight: 600;
+         margin-top: 3px;
+         }
+         span.keywords {
+         font-size: 12px;
+         color: #B16666;
+         }
+         thead {
+         display: none;
+         }
+         main > header {
+         width: 100%;
+         float: left;
+         margin-bottom: 1em;
+         }
+         h1 {
+         float: left;
+         }
+         h1, h2, .label {
+         font-size: 2.5em;
+         text-transform: uppercase;
+         font-weight: 300;
+         font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Lato', 'sans-serif'
+         }
+         #contact {
+         clear: both;
+         float: right;
+         margin-top: 2px;
+         }
+         #contact span + span {
+         margin-left: 10px;
+         }
+         header > span.fa {
+         text-align: center;
+         margin-right: 3px;
+         position: absolute;
+         width: 40px;
+         top: 14px;
+         font-size: 30px;
+         /*transform: translateX(-110%); PDF no likey */
+         margin-left: -50px;
+         color: #DADADA;
+         }
+         .label {
+         float: right;
+         color: #DADADA;
+         }
+         #summary {
+         color: #717171;
+         font-size: 1em;
+         margin-top: 6em;
+         }
+         #skills td {
+         padding-top: 7px;
+         padding-bottom: 7px;
+         }
+         #references > p, #references > p > a {
+         color: #961e1e;
+         text-align: center;
+         margin: 30px;
+         font-weight: bold;
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         }
+      </style>
+   </head>
+   <body>
+      <main>
+         <header>
+            <h1>Amber <span style="color: #3da4ab;">Lee</span></h1>
+            <span class="label">Software Engineer</span>
+            <p id="contact"> <span class="email"><a href="mailto:me@amberzlee.com">me@amberzlee.com</a></span>
+               <span class="website"><a href="https://amberzlee.com">http://amberzlee.com</a></span>
+            </p>
+         </header>
+         <section id="summary">I&#39;m a software engineer with 4+ years of experience in designing and developing software including web applications, web services, scalable workflows, etc.
+            I take high ownership in my work and always work backwards from the customer.
+            I&#39;ve been able to ramp up quickly in new roles &amp; projects and
+            adapt quickly in fast-paced environments.
+         </section>
+         <hr>
+         <section id="employment">
             <header>
-                 <h1>Amber <span style="color: #3da4ab;">Lee</span></h1>
- <span class="label">Software Engineer</span>
-                <p id="contact"> <span class="email"><a href="mailto:me@amberzlee.com">me@amberzlee.com</a></span>
-                     <span class="website"><a href="https://amberzlee.com">http://amberzlee.com</a></span>
-                </p>
+               <span class="fa fa-lg fa-briefcase"></span> 
+               <h2>employment</h2>
             </header>
-            <section id="summary">I&#39;m a software engineer with 4+ years of experience in designing and developing software including web applications, web services, scalable workflows, etc.
-                I take high ownership in my work and always work backwards from the customer.
-                I&#39;ve been able to ramp up quickly in new roles &amp; projects and
-                adapt quickly in fast-paced environments.</section>
-            <hr>
-            <section id="employment">
-                <header> <span class="fa fa-lg fa-briefcase"></span> 
-                     <h2>employment</h2>
-
-                </header>
-                <div>
-                    <h3><em>Software Engineer</em>,
-                        Square
-                    </h3><span class="tenure">May 2021 - Present </span>
-                    <p>
-                    <p> Developer Platform team</p>
-                    </p>
-                </div>
-                <div>
-                     <h3><em>Software Development Engineer</em>,
-
-              Amazon Web Services
-
-              </h3>
- <span class="tenure">July 2017 — May 2021 </span>
-                    <p>
-                        <p>AWS IQ team - platform that allows customers to
-                            connect with third party AWS certified experts on projects. Middle Mile demand forecasting & scheduling team - designed and developed services & applications to optimize demand forecasting in Middle Mile.</p>
-                    </p>
-                    <ul>
-                        <li>Designed &amp; implemented multiple features from the backend to frontend
-                            using Typescript, GraphQL, ReactJS and HTML &amp; CSS</li>
-                        <li>Experience working with multiple AWS services including S3, DynamoDB,
-                            IAM, Lambda, Redshift, CloudFormation, AWS CDK, etc</li>
-                        <li>Owned multiple high impact projects that involved working with product
-                            managers, data scientists, senior software engineers, and other stakeholders.</li>
-                    </ul>
-                </div>
-                <div>
-                     <h3><em>Software Development Engineer Intern</em>,
-
-              Amazon
-
-              </h3>
- <span class="tenure">Aug 2016 — Dec 2016</span>
-                    <p>
-                        <p>Interned for EBS statistics team - team developed tools to help collect and
-                            analyze data about elastic block store volumes.</p>
-                    </p>
-                    <ul>
-                        <li>Designed and developed new Java services using Amazon web services including
-                            S3, SQS and Redshift that allows various client EBS datasets to be automatically
-                            centralized in a global Redshift cluster</li>
-                        <li>Worked with AWS SDK for Java and Spring Framework</li>
-                        <li>Service monitored data-quality and failure metrics to help improve EBS
-                            experience for EC2 customers</li>
-                    </ul>
-                </div>
-                <div>
-                     <h3><em>Software Development Engineer Intern</em>,
-
-              nanoPay Corporation
-
-              </h3>
- <span class="tenure">Jan 2016 — April 2016</span>
-                    <p>
-                        <p>nanoPay is a financial tech startup that is innovating payments.</p>
-                    </p>
-                    <ul>
-                        <li>Designed and developed admin portal with functionality to manually process
-                            pending cashouts, view user data &amp; bank info, add additional admin
-                            users, and generate csv files with merchant &amp; consumer information.
-                            Created the endpoints on the API for the controllers</li>
-                        <li>Implemented core data for the MintChip iOS application to manage data
-                            stack</li>
-                    </ul>
-                </div>
-                <div>
-                     <h3><em>Front end developer Intern</em>,
-
-              Keyobi
-
-              </h3>
- <span class="tenure">May 2015 — Dec 2015</span>
-                    <p></p>
-                    <ul>
-                        <li>Built responsive widgets for the web application using Ruby on Rails,
-                            JavaScript &amp; Foundation</li>
-                        <li>Designed illustrations using Adobe Illustrator to supplement the website
-                            and blog</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <header><span class="fa fa-lg fa-graduation-cap"></span>
-                  <hr>
-                  <h2>education</h2>
-                </header>
-                <div>
-                     <h3><em>Bachelor of Computer Science</em>, University of Waterloo</h3>
- <span class="tenure">Sept 2012 — May 2017</span>
-                </div>
-            </section>
-            <section>
-                <header><span class="fa fa-lg fa-laptop"></span> 
-                  <hr>
-                  <h2>portfolio</h2>
-                </header>
-                <div>
-                     <p>Project portfolio available at <a href="https://www.amberzlee.com">www.amberzlee.com</a></p>
-                </div>
-            </section>
-        </main>
-    </body>
-
+            <div>
+               <h3><em>Software Engineer</em>,
+                  Square
+               </h3>
+               <span class="tenure">May 2021 - Present </span>
+               <p>
+               <p> Developer Platform team</p>
+               </p>
+            </div>
+            <div>
+               <h3><em>Software Development Engineer</em>,
+                  Amazon Web Services
+               </h3>
+               <span class="tenure">July 2017 — May 2021 </span>
+               <p>
+               <p>AWS IQ team - platform that allows customers to
+                  connect with third party AWS certified experts on projects. Middle Mile demand forecasting & scheduling team - designed and developed services & applications to optimize demand forecasting in Middle Mile.
+               </p>
+               </p>
+               <ul>
+                  <li>Designed &amp; implemented multiple features from the backend to frontend
+                     using Typescript, GraphQL, ReactJS and HTML &amp; CSS
+                  </li>
+                  <li>Experience working with multiple AWS services including S3, DynamoDB,
+                     IAM, Lambda, Redshift, CloudFormation, AWS CDK, etc
+                  </li>
+                  <li>Owned multiple high impact projects that involved working with product
+                     managers, data scientists, senior software engineers, and other stakeholders.
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h3><em>Software Development Engineer Intern</em>,
+                  Amazon
+               </h3>
+               <span class="tenure">Aug 2016 — Dec 2016</span>
+               <p>
+               <p>Interned for EBS statistics team - team developed tools to help collect and
+                  analyze data about elastic block store volumes.
+               </p>
+               </p>
+               <ul>
+                  <li>Designed and developed new Java services using Amazon web services including
+                     S3, SQS and Redshift that allows various client EBS datasets to be automatically
+                     centralized in a global Redshift cluster
+                  </li>
+                  <li>Worked with AWS SDK for Java and Spring Framework</li>
+                  <li>Service monitored data-quality and failure metrics to help improve EBS
+                     experience for EC2 customers
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h3><em>Software Development Engineer Intern</em>,
+                  nanoPay Corporation
+               </h3>
+               <span class="tenure">Jan 2016 — April 2016</span>
+               <p>
+               <p>nanoPay is a financial tech startup that is innovating payments.</p>
+               </p>
+               <ul>
+                  <li>Designed and developed admin portal with functionality to manually process
+                     pending cashouts, view user data &amp; bank info, add additional admin
+                     users, and generate csv files with merchant &amp; consumer information.
+                     Created the endpoints on the API for the controllers
+                  </li>
+                  <li>Implemented core data for the MintChip iOS application to manage data
+                     stack
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <h3><em>Front end developer Intern</em>,
+                  Keyobi
+               </h3>
+               <span class="tenure">May 2015 — Dec 2015</span>
+               <p></p>
+               <ul>
+                  <li>Built responsive widgets for the web application using Ruby on Rails,
+                     JavaScript &amp; Foundation
+                  </li>
+                  <li>Designed illustrations using Adobe Illustrator to supplement the website
+                     and blog
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section>
+            <header>
+               <span class="fa fa-lg fa-graduation-cap"></span>
+               <hr>
+               <h2>education</h2>
+            </header>
+            <div>
+               <h3><em>Bachelor of Computer Science</em>, University of Waterloo</h3>
+               <span class="tenure">Sept 2012 — May 2017</span>
+            </div>
+         </section>
+         <section>
+            <header>
+               <span class="fa fa-lg fa-laptop"></span> 
+               <hr>
+               <h2>portfolio</h2>
+            </header>
+            <div>
+               <p>Project portfolio available at <a href="https://www.amberzlee.com">www.amberzlee.com</a></p>
+            </div>
+         </section>
+      </main>
+   </body>
 </html>
