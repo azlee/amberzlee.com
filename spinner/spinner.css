@@ -19,9 +19,10 @@ text {
   justify-content: center;
 }
 #chosenPerson h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
 }
 
 /*the container must be positioned relative:*/

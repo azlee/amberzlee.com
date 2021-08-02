@@ -218,16 +218,8 @@ function generateSpinner(team) {
     .append("circle")
     .attr("cx", 0)
     .attr("cy", 0)
-    .attr("r", 60)
+    .attr("r", 50)
     .style({ fill: "white", cursor: "pointer" });
-  //spin text
-  container
-    .append("text")
-    .attr("x", 0)
-    .attr("y", 15)
-    .attr("text-anchor", "middle")
-    .style({ "font-size": "25px", fill: "#333333" })
-    .text("SPIN");
 }
 
 generateSpinner("DASH");
