@@ -1,57 +1,3 @@
-let padding = { top: 20, right: 40, bottom: 0, left: 0 },
-  w = 500 - padding.left - padding.right,
-  h = 500 - padding.top - padding.bottom,
-  r = Math.min(w, h) / 2,
-  rotation = 0,
-  oldrotation = 0,
-  picked = 100000,
-  oldpick = [];
-
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function hslToRgb(h, s, l) {
-  var r, g, b;
-
-  if (s == 0) {
-    r = g = b = l; // achromatic
-  } else {
-    var hue2rgb = function hue2rgb(p, q, t) {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1 / 6) return p + (q - p) * 6 * t;
-      if (t < 1 / 2) return q;
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-      return p;
-    };
-
-    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    var p = 2 * l - q;
-    r = hue2rgb(p, q, h + 1 / 3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1 / 3);
-  }
-
-  r = Math.round(r * 255);
-  g = Math.round(g * 255);
-  b = Math.round(b * 255);
-  return rgbToHex(r, g, b);
-}
-
-function generateColors(num_colors) {
-  let c = [];
-  for (var i = 0; i < num_colors; ++i) {
-    c.push(hslToRgb(i / num_colors, 0.8, 0.7));
-  }
-  return c;
-}
-
 // define team members
 const TEAM_MEMBERS = {
   DASH: ["Amber", "Barak", "Bryan", "Emma", "Michael", "Sagnik"],
@@ -77,6 +23,75 @@ const TEAM_MEMBERS = {
     "Xiao",
   ],
 };
+
+let padding = { top: 20, right: 40, bottom: 0, left: 0 },
+  w = 500 - padding.left - padding.right,
+  h = 500 - padding.top - padding.bottom,
+  r = Math.min(w, h) / 2,
+  rotation = 0,
+  oldrotation = 0,
+  picked = 100000,
+  oldpick = [];
+
+function componentToHex(c) {
+  const hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+/**
+ * Convert HSL to RGB
+ * @param {Number} h hue
+ * @param {Number} s saturation
+ * @param {Number} l lightness
+ */
+function hslToRgb(h, s, l) {
+  let r, g, b;
+
+  if (s == 0) {
+    r = g = b = l; // achromatic
+  } else {
+    let hue2rgb = function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+      return p;
+    };
+
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    const p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1 / 3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1 / 3);
+  }
+
+  r = Math.round(r * 255);
+  g = Math.round(g * 255);
+  b = Math.round(b * 255);
+  return rgbToHex(r, g, b);
+}
+
+/**
+ * Generate colors based on HSL
+ * @param {Number} numColors
+ */
+function generateColors(numColors) {
+  let c = [];
+  for (let i = 0; i < numColors; ++i) {
+    c.push(hslToRgb(i / numColors, 0.8, 0.7));
+  }
+  return c;
+}
+
+/**
+ * Generate a spinner for the team
+ * @param {String} team
+ */
 function generateSpinner(team) {
   // clear spinner
   const chart = document.getElementById("chart");
@@ -153,14 +168,13 @@ function generateSpinner(team) {
       return data[i].name;
     });
   container.on("click", spin);
-  function spin(d) {
+  function spin() {
     container.on("click", null);
     if (oldpick.length == data.length) {
       container.on("click", null);
       return;
     }
     let ps = 360 / data.length,
-      pieslice = Math.round(1440 / data.length),
       rng = Math.floor(Math.random() * 1440 + 360);
 
     rotation = Math.round(rng / ps) * ps;
@@ -182,8 +196,6 @@ function generateSpinner(team) {
         //populate name of chosen person
         d3.select("#chosenPerson h1").text(data[picked].name);
         oldrotation = rotation;
-
-        /* Comment the below line for restrict spin to sngle time */
         container.on("click", spin);
       });
   }
@@ -220,7 +232,7 @@ function generateSpinner(team) {
 
 generateSpinner("DASH");
 
-function rotTween(to) {
+function rotTween() {
   let i = d3.interpolate(oldrotation % 360, rotation);
   return function (t) {
     return "rotate(" + i(t) + ")";
@@ -247,7 +259,6 @@ function getRandomNumbers() {
  * SELECT DROPDOWN
  *
  */
-
 let select, i, j, l, ll, selElmnt, selectDiv, optionsDiv, option;
 select = document.getElementsByClassName("custom-select");
 l = select.length;
@@ -272,7 +283,7 @@ for (i = 0; i < l; i++) {
       generateSpinner(this.innerHTML);
       // when an item is clicked, update the original select box,
       // and the selected item
-      var y, i, k, s, h, sl, yl;
+      let y, i, k, s, h, sl, yl;
       s = this.parentNode.parentNode.getElementsByTagName("select")[0];
       sl = s.length;
       h = this.parentNode.previousSibling;
