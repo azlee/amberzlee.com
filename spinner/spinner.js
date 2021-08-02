@@ -5,134 +5,93 @@ let padding = { top: 20, right: 40, bottom: 0, left: 0 },
   rotation = 0,
   oldrotation = 0,
   picked = 100000,
-  oldpick = [],
-  color = [
-    "#f7cbc8",
-    "#203368",
-    "#b8cc94",
-    "#f1782b",
-    "#90a7d0",
-    "#f5be3e",
-    "#005084",
-    "#fbdd39",
-    "#96dbde",
-    "#ff9aa2",
-    "#9897a4",
-    "#df4731",
-    "#cc99c9",
-    "#b08d6a",
-    "#76c353",
-    "#e09397",
-    "#17becf",
-    "#976fab",
-    "#fd8d3c",
-    "#9edae5",
-    "#c08eb8",
-    "#d9d9d9",
-    "#fdfd97",
-    "#e27667",
-    "#9ec1ce",
-    "#f15128",
-    "#9edae5",
-    "#d62728",
-    "#c5b0d5",
-  ];
-color = [
-  "#0A7B83",
-  "#2AA876",
-  "#FFD265",
-  "#be8c98",
-  "#F19C65",
-  "#CE4D45",
-  "#7270af",
-  "#57315A",
-  "#d87e8c",
-  "#8cb1be",
-  "#8C2B59",
-  "#D8A2AF",
-  "#E4E8E8",
-  "#F1A23C",
-  "#5C4B51",
-  "#8CBEB2",
-  "#F2EBBF",
-  "#F3B562",
-  "#66BB6A",
-  "#F06060",
-];
-// color = d3.scale.category10();
-// get random start index for color
-const colorStart = Math.floor(Math.random() * color.length);
+  oldpick = [];
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function hslToRgb(h, s, l) {
+  var r, g, b;
+
+  if (s == 0) {
+    r = g = b = l; // achromatic
+  } else {
+    var hue2rgb = function hue2rgb(p, q, t) {
+      if (t < 0) t += 1;
+      if (t > 1) t -= 1;
+      if (t < 1 / 6) return p + (q - p) * 6 * t;
+      if (t < 1 / 2) return q;
+      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+      return p;
+    };
+
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+    var p = 2 * l - q;
+    r = hue2rgb(p, q, h + 1 / 3);
+    g = hue2rgb(p, q, h);
+    b = hue2rgb(p, q, h - 1 / 3);
+  }
+
+  r = Math.round(r * 255);
+  g = Math.round(g * 255);
+  b = Math.round(b * 255);
+  return rgbToHex(r, g, b);
+}
+
+function generateColors(num_colors) {
+  let c = [];
+  for (var i = 0; i < num_colors; ++i) {
+    c.push(hslToRgb(i / num_colors, 0.8, 0.7));
+  }
+  return c;
+}
+
 // define team members
-const teamMembers = {
-  DASH: [
-    {
-      name: "Amber",
-      value: 1,
-    },
-    {
-      name: "Barak",
-      value: 2,
-    },
-    {
-      name: "Bryan",
-      value: 3,
-    },
-    {
-      name: "Emma",
-      value: 4,
-    },
-    {
-      name: "Michael",
-      value: 5,
-    },
-    {
-      name: "Sagnik",
-      value: 6,
-    },
-  ],
-  INFRA: [
-    {
-      name: "Christina",
-      value: 1,
-    },
-    {
-      name: "Derek",
-      value: 2,
-    },
-    {
-      name: "Eva",
-      value: 3,
-    },
-    {
-      name: "Harnoor",
-      value: 4,
-    },
-    {
-      name: "Mike K",
-      value: 5,
-    },
-  ],
-  SURF: [
-    {
-      name: "Daphne",
-      value: 1,
-    },
-    {
-      name: "Joan",
-      value: 2,
-    },
-    {
-      name: "Justin",
-      value: 3,
-    },
-    {
-      name: "Wolfgang",
-      value: 4,
-    },
+const TEAM_MEMBERS = {
+  DASH: ["Amber", "Barak", "Bryan", "Emma", "Michael", "Sagnik"],
+  INFRA: ["Christina", "Derek", "Eva", "Harnoor", "Mike K"],
+  SURF: ["Daphne", "Joan", "Justin", "Wolfgang"],
+  "All teams": [
+    "Alex",
+    "Amber",
+    "Barak",
+    "Bryan",
+    "Christina",
+    "Daphne",
+    "Derek",
+    "Emma",
+    "Eva",
+    "Harnoor",
+    "Joan",
+    "Justin",
+    "Michael",
+    "Mike K",
+    "Sagnik",
+    "Wolfgang",
+    "Xiao",
   ],
 };
 function generateSpinner(team) {
-  let data = teamMembers[team];
+  // clear spinner
+  const chart = document.getElementById("chart");
+  chart.innerHTML = "";
+  const chosen = document.getElementById("chosenPerson");
+  chosen.innerHTML = "<h1></h1>";
+  let i = 1;
+  const colors = generateColors(TEAM_MEMBERS[team].length);
+  let data = TEAM_MEMBERS[team].map((name) => {
+    i++;
+    return {
+      name,
+      value: i,
+    };
+  });
   let svg = d3
     .select("#chart")
     .append("svg")
@@ -167,9 +126,8 @@ function generateSpinner(team) {
   arcs
     .append("path")
     .attr("fill", function (d, i) {
-      return color[(colorStart + i) % color.length];
+      return colors[i];
     })
-    .style("stroke", "black")
     .attr("d", function (d) {
       return arc(d);
     });
@@ -190,6 +148,7 @@ function generateSpinner(team) {
     })
     .attr("text-anchor", "end")
     .style({ fill: "white" })
+    .style({ "font-size": team === "All teams" ? "22px" : "30px" })
     .text(function (d, i) {
       return data[i].name;
     });
@@ -248,15 +207,15 @@ function generateSpinner(team) {
     .attr("cx", 0)
     .attr("cy", 0)
     .attr("r", 60)
-    .style({ fill: "white", cursor: "pointer", stroke: "black" });
+    .style({ fill: "white", cursor: "pointer" });
   //spin text
   container
     .append("text")
     .attr("x", 0)
     .attr("y", 15)
     .attr("text-anchor", "middle")
-    .text("SPIN")
-    .style({ "font-size": "30px" });
+    .style({ "font-size": "25px", fill: "#333333" })
+    .text("SPIN");
 }
 
 generateSpinner("DASH");
@@ -276,7 +235,6 @@ function getRandomNumbers() {
   ) {
     window.crypto.getRandomValues(array);
   } else {
-    //no support for crypto, get crappy random numbers
     for (let i = 0; i < 1000; i++) {
       array[i] = Math.floor(Math.random() * 100000) + 1;
     }
@@ -290,26 +248,28 @@ function getRandomNumbers() {
  *
  */
 
-let select, i, j, l, ll, selElmnt, a, b, c;
+let select, i, j, l, ll, selElmnt, selectDiv, optionsDiv, option;
 select = document.getElementsByClassName("custom-select");
 l = select.length;
 for (i = 0; i < l; i++) {
   selElmnt = select[i].getElementsByTagName("select")[0];
   ll = selElmnt.length;
   // for each element, create a new div that will act as the selected item
-  a = document.createElement("div");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  select[i].appendChild(a);
+  selectDiv = document.createElement("div");
+  selectDiv.setAttribute("class", "select-selected");
+  selectDiv.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  select[i].appendChild(selectDiv);
   // for each element, create a new DIV that will contain the option list
-  b = document.createElement("div");
-  b.setAttribute("class", "select-items select-hide");
+  optionsDiv = document.createElement("div");
+  optionsDiv.setAttribute("class", "select-items select-hide");
   for (j = 1; j < ll; j++) {
     // for each option in the original select element,
     // create a new DIV that will act as an option item
-    c = document.createElement("div");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function (e) {
+    option = document.createElement("div");
+    option.innerHTML = selElmnt.options[j].innerHTML;
+    option.addEventListener("click", function (e) {
+      // update the chart
+      generateSpinner(this.innerHTML);
       // when an item is clicked, update the original select box,
       // and the selected item
       var y, i, k, s, h, sl, yl;
@@ -331,10 +291,10 @@ for (i = 0; i < l; i++) {
       }
       h.click();
     });
-    b.appendChild(c);
+    optionsDiv.appendChild(option);
   }
-  select[i].appendChild(b);
-  a.addEventListener("click", function (e) {
+  select[i].appendChild(optionsDiv);
+  selectDiv.addEventListener("click", function (e) {
     // when the select box is clicked, close any other select boxes,
     //  and open/close the current select box
     e.stopPropagation();

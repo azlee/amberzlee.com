@@ -3,7 +3,6 @@
 }
 
 text {
-  font-size: 30px;
   pointer-events: none;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
     2px 2px 0 #000;
@@ -37,7 +36,7 @@ text {
 }
 
 .select-selected {
-  background-color: #049eaf;
+  background-color: #3086e8;
 }
 
 /*style the arrow inside the select element:*/
@@ -72,7 +71,7 @@ text {
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: #049eaf;
+  background-color: #3086e8;
   top: 100%;
   left: 0;
   right: 0;
