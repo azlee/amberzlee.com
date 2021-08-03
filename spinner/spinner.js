@@ -14,6 +14,7 @@ const TEAM_MEMBERS = {
     "Emma",
     "Eva",
     "Harnoor",
+    "Ian",
     "Joan",
     "Justin",
     "Michael",
