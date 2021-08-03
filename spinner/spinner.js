@@ -2,7 +2,7 @@
 const TEAM_MEMBERS = {
   DASH: ["Amber", "Barak", "Bryan", "Emma", "Michael", "Sagnik"],
   INFRA: ["Christina", "Derek", "Eva", "Harnoor", "Mike K"],
-  SURF: ["Daphne", "Joan", "Justin", "Wolfgang"],
+  SURF: ["Daphne", "Joan", "Justin", "Wolfgang", "Xiao"],
   "All teams": [
     "Alex",
     "Amber",
