@@ -98,7 +98,7 @@ function generateSpinner(team) {
   const chart = document.getElementById("chart");
   chart.innerHTML = "";
   const chosen = document.getElementById("chosenPerson");
-  chosen.innerHTML = "<h1></h1>";
+  chosen.innerHTML = "";
   let i = 1;
   const colors = generateColors(TEAM_MEMBERS[team].length);
   let data = TEAM_MEMBERS[team].map((name) => {
@@ -195,7 +195,7 @@ function generateSpinner(team) {
       .attrTween("transform", rotTween)
       .each("end", function () {
         //populate name of chosen person
-        d3.select("#chosenPerson h1").text(data[picked].name);
+        d3.select("#chosenPerson").text(data[picked].name);
         oldrotation = rotation;
         container.on("click", spin);
       });
