@@ -1,6 +1,6 @@
 // define team members
 const TEAM_MEMBERS = {
-  DASH: ["Amber", "Barak", "Bryan", "Emma", "Ian", "Michael", "Sagnik"],
+  DASH: ["Amber", "Barak", "Bryan", "Chris", "Emma", "Ian", "Michael", "Sagnik"],
   INFRA: ["Christina", "Derek", "Eva", "Harnoor", "Mike K"],
   SURF: ["Daphne", "Joan", "Justin", "Wolfgang", "Xiao"],
   "All teams": [
@@ -8,6 +8,7 @@ const TEAM_MEMBERS = {
     "Amber",
     "Barak",
     "Bryan",
+    "Chris",
     "Christina",
     "Daphne",
     "Derek",
