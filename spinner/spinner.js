@@ -1,8 +1,28 @@
 // define team members
 const TEAM_MEMBERS = {
-  DASH: ["Amber", "Barak", "Bryan", "Chris", "Emma", "Ian", "Michael", "Sagnik"],
-  INFRA: ["Christina", "Derek", "Eva", "Harnoor", "Mike K"],
-  TAG: ["Daphne", "Joan", "Justin", "Scott", "Wolfgang", "Xiao"],
+  DASH: [
+    "Amber",
+    "Barak",
+    "Bryan",
+    "Chris",
+    "Emma",
+    "Ian",
+    "Michael",
+    "Sagnik",
+    "Scott",
+  ],
+  INFRA: [
+    "Chris",
+    "Christina",
+    "Derek",
+    "Eva",
+    "Harnoor",
+    "Mike K",
+    "Scott",
+    "Wei",
+    "Xiao",
+  ],
+  TAG: ["Chris", "Daphne", "Joan", "Justin", "Scott", "Wolfgang", "Xiao"],
   "All teams": [
     "Alex",
     "Amber",
@@ -29,8 +49,8 @@ const TEAM_MEMBERS = {
 };
 
 let padding = { top: 20, right: 40, bottom: 0, left: 0 },
-  w = 500 - padding.left - padding.right,
-  h = 500 - padding.top - padding.bottom,
+  w = 600 - padding.left - padding.right,
+  h = 600 - padding.top - padding.bottom,
   r = Math.min(w, h) / 2,
   rotation = 0,
   oldrotation = 0,
@@ -93,18 +113,55 @@ function generateColors(numColors) {
 }
 
 /**
- * Generate a spinner for the team
- * @param {String} team
+ * Refresh the spinner with the checked team members
  */
-function generateSpinner(team) {
+function refreshSpinner() {
+  const checkedMembers = [
+    ...document.querySelectorAll(".checkboxInput:checked"),
+  ].map((e) => e.name);
+  generateSpinner(checkedMembers);
+}
+
+/**
+ * Generate the checkbox select list
+ * @param {String[]} teamMembers
+ */
+function generateSelectList(teamMembers) {
+  const checkbox = document.getElementById("checkbox");
+  checkbox.innerHTML = "";
+  for (const teamMember of teamMembers) {
+    const div = document.createElement("div");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = teamMember;
+    input.name = teamMember;
+    input.checked = true;
+    input.classList = "checkboxInput";
+    input.onchange = function () {
+      refreshSpinner();
+    };
+    const label = document.createElement("label");
+    label.htmlFor = teamMember;
+    label.innerText = teamMember;
+    div.appendChild(input);
+    div.appendChild(label);
+    checkbox.appendChild(div);
+  }
+}
+
+/**
+ * Generate a spinner for the team
+ * @param {String[]} teamMembers
+ */
+function generateSpinner(teamMembers) {
   // clear spinner
   const chart = document.getElementById("chart");
   chart.innerHTML = "";
   const chosen = document.getElementById("chosenPerson");
   chosen.innerHTML = "";
   let i = 1;
-  const colors = generateColors(TEAM_MEMBERS[team].length);
-  let data = TEAM_MEMBERS[team].map((name) => {
+  const colors = generateColors(teamMembers.length);
+  let data = teamMembers.map((name) => {
     i++;
     return {
       name,
@@ -167,7 +224,7 @@ function generateSpinner(team) {
     })
     .attr("text-anchor", "end")
     .style({ fill: "white" })
-    .style({ "font-size": team === "All teams" ? "22px" : "30px" })
+    .style({ "font-size": teamMembers.length > 15 ? "25px" : "35px" })
     .text(function (d, i) {
       return data[i].name;
     });
@@ -226,7 +283,8 @@ function generateSpinner(team) {
     .style({ fill: "white", cursor: "pointer" });
 }
 
-generateSpinner("DASH");
+generateSpinner(TEAM_MEMBERS["DASH"]);
+generateSelectList(TEAM_MEMBERS["DASH"]);
 
 function rotTween() {
   let i = d3.interpolate(oldrotation % 360, rotation);
@@ -276,7 +334,8 @@ for (i = 0; i < l; i++) {
     option.innerHTML = selElmnt.options[j].innerHTML;
     option.addEventListener("click", function (e) {
       // update the chart
-      generateSpinner(this.innerHTML);
+      generateSpinner(TEAM_MEMBERS[this.innerHTML]);
+      generateSelectList(TEAM_MEMBERS[this.innerHTML]);
       // when an item is clicked, update the original select box,
       // and the selected item
       let y, i, k, s, h, sl, yl;

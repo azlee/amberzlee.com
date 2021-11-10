@@ -4,7 +4,8 @@
 
 text {
   pointer-events: none;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 #chart {
   padding-left: 20px;
@@ -21,6 +22,37 @@ text {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4d4d4d;
   margin-top: 25px;
+}
+
+#checkbox {
+  margin-left: 20px;
+  position: fixed;
+  font-size: 22px;
+}
+
+#checkbox input {
+  margin: 10px 0 0 10px;
+}
+
+#checkbox label {
+  margin-left: 15px;
+}
+
+input[type="checkbox"]::before {
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid #555;
+}
+
+input[type="checkbox"]:checked {
+  background: #3086e8;
+  border: 2px solid #555;
 }
 
 /*the container must be positioned relative:*/
