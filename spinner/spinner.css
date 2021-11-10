@@ -13,6 +13,16 @@ text {
   align-items: center;
   justify-content: center;
 }
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #chosenPerson {
   display: flex;
   align-items: center;
@@ -32,10 +42,18 @@ text {
 
 #checkbox input {
   margin: 10px 0 0 10px;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.25s;
 }
 
 #checkbox label {
   margin-left: 15px;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.25s;
 }
 
 input[type="checkbox"]::before {
@@ -44,8 +62,8 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: white;
   border: 2px solid #555;
 }
