@@ -24,14 +24,16 @@ text {
 }
 
 #chosenPerson {
-  display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0%;
+  display: flex;
   font-size: 40px;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4d4d4d;
   margin-top: 25px;
+  transition: all 0.25s;
 }
 
 #checkbox {

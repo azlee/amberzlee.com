@@ -158,6 +158,7 @@ function generateSpinner(teamMembers) {
   const chart = document.getElementById("chart");
   chart.innerHTML = "";
   const chosen = document.getElementById("chosenPerson");
+  chosen.classList.remove("fadeInLeft");
   chosen.innerHTML = "";
   let i = 1;
   const colors = generateColors(teamMembers.length);
@@ -230,6 +231,11 @@ function generateSpinner(teamMembers) {
     });
   container.on("click", spin);
   function spin() {
+    d3.select("#chosenPerson")[0][0].style.opacity = 0;
+    d3.select("#chosenPerson")[0][0].style.transform = "translate(100px)";
+    setTimeout(() => {
+      d3.select("#chosenPerson")[0][0].style.transform = "translate(-100px)";
+    }, 400);
     container.on("click", null);
     if (oldpick.length == data.length) {
       container.on("click", null);
@@ -256,6 +262,8 @@ function generateSpinner(teamMembers) {
       .each("end", function () {
         //populate name of chosen person
         d3.select("#chosenPerson").text(data[picked].name);
+        d3.select("#chosenPerson")[0][0].style.opacity = 1;
+        d3.select("#chosenPerson")[0][0].style.transform = "translate(0)";
         oldrotation = rotation;
         container.on("click", spin);
       });
