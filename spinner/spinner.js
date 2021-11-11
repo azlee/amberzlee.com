@@ -49,8 +49,8 @@ const TEAM_MEMBERS = {
 };
 
 let padding = { top: 20, right: 40, bottom: 0, left: 0 },
-  w = 600 - padding.left - padding.right,
-  h = 600 - padding.top - padding.bottom,
+  w = 725 - padding.left - padding.right,
+  h = 725 - padding.top - padding.bottom,
   r = Math.min(w, h) / 2,
   rotation = 0,
   oldrotation = 0,
@@ -225,16 +225,16 @@ function generateSpinner(teamMembers) {
     })
     .attr("text-anchor", "end")
     .style({ fill: "white" })
-    .style({ "font-size": teamMembers.length > 15 ? "25px" : "35px" })
+    .style({ "font-size": teamMembers.length > 15 ? "28px" : "38px" })
     .text(function (d, i) {
       return data[i].name;
     });
   container.on("click", spin);
   function spin() {
     d3.select("#chosenPerson")[0][0].style.opacity = 0;
-    d3.select("#chosenPerson")[0][0].style.transform = "translate(100px)";
+    d3.select("#chosenPerson")[0][0].style.transform = "translate(80px)";
     setTimeout(() => {
-      d3.select("#chosenPerson")[0][0].style.transform = "translate(-100px)";
+      d3.select("#chosenPerson")[0][0].style.transform = "translate(-80px)";
     }, 400);
     container.on("click", null);
     if (oldpick.length == data.length) {
