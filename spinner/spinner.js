@@ -226,7 +226,6 @@ function generateSpinner(teamMembers) {
     })
     .attr("text-anchor", "end")
     .style({ fill: "white" })
-    .attr("stroke", "black")
     .attr("font-weight", "800")
     .style({ "font-size": teamMembers.length > 15 ? "28px" : "38px" })
     .text(function (d, i) {
