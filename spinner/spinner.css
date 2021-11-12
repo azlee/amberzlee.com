@@ -21,6 +21,9 @@ body {
 #chart svg g {
   cursor: pointer;
 }
+#chart svg {
+  overflow: visible;
+}
 
 @keyframes fadeInOpacity {
   0% {
