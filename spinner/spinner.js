@@ -107,7 +107,7 @@ function hslToRgb(h, s, l) {
 function generateColors(numColors) {
   let c = [];
   for (let i = 0; i < numColors; ++i) {
-    c.push(hslToRgb(i / numColors, 0.99, 0.65));
+    c.push(hslToRgb(i / numColors, 0.85, 0.65));
   }
   return c;
 }
@@ -207,7 +207,8 @@ function generateSpinner(teamMembers) {
     })
     .attr("d", function (d) {
       return arc(d);
-    });
+    })
+    .attr("stroke", "#444");
   // add the text
   arcs
     .append("text")
@@ -225,6 +226,8 @@ function generateSpinner(teamMembers) {
     })
     .attr("text-anchor", "end")
     .style({ fill: "white" })
+    .attr("stroke", "black")
+    .attr("font-weight", "800")
     .style({ "font-size": teamMembers.length > 15 ? "28px" : "38px" })
     .text(function (d, i) {
       return data[i].name;
@@ -288,7 +291,8 @@ function generateSpinner(teamMembers) {
     .attr("cx", 0)
     .attr("cy", 0)
     .attr("r", 50)
-    .style({ fill: "white", cursor: "pointer" });
+    .style({ fill: "white", cursor: "pointer" })
+    .attr("stroke", "#444");
 }
 
 generateSpinner(TEAM_MEMBERS["DASH"]);
