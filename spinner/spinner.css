@@ -59,6 +59,7 @@ body {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.25s;
+  cursor: pointer;
 }
 
 #checkbox label {
@@ -67,6 +68,7 @@ body {
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.25s;
+  cursor: pointer;
 }
 
 input[type="checkbox"]::before {
