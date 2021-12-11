@@ -1,7 +1,6 @@
 // define team members
 const TEAM_MEMBERS = {
   DASH: [
-    "Alex",
     "Amber",
     "Barak",
     "Bryan",
