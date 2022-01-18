@@ -4,7 +4,6 @@ const TEAM_MEMBERS = {
     "Amber",
     "Barak",
     "Bryan",
-    "Chris",
     "Emma",
     "Erin",
     "Ian",
