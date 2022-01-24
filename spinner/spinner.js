@@ -3,7 +3,6 @@ const TEAM_MEMBERS = {
   DASH: [
     "Amber",
     "Barak",
-    "Bryan",
     "Emma",
     "Erin",
     "Ian",
@@ -37,7 +36,6 @@ const TEAM_MEMBERS = {
     "Alex",
     "Amber",
     "Barak",
-    "Bryan",
     "Chris",
     "Christina",
     "Daphne",
