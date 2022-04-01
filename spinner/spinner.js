@@ -8,7 +8,6 @@ const TEAM_MEMBERS = {
     "Ian",
     "Michael",
     "Ryan",
-    "Sagnik",
   ],
   INFRA: [
     "Chris",
