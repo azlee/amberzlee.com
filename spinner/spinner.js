@@ -7,7 +7,6 @@ const TEAM_MEMBERS = {
     "Erin",
     "Ian",
     "Michael",
-    "Ryan",
   ],
   INFRA: [
     "Chris",
@@ -16,7 +15,7 @@ const TEAM_MEMBERS = {
     "Eva",
     "Harnoor",
     "Mike K",
-    "Wei",
+    "Ryan",
     "Xiao",
   ],
   TAG: [
@@ -51,7 +50,6 @@ const TEAM_MEMBERS = {
     "Ryan",
     "Sagnik",
     "Scott",
-    "Wei",
     "Wolfgang",
     "Xiao",
   ],
