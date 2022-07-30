@@ -36,6 +36,7 @@ const TEAM_MEMBERS = {
     "Xiao",
   ],
 };
+let squad = "DASH";
 
 let padding = { top: 20, right: 40, bottom: 0, left: 0 },
   w = 725 - padding.left - padding.right,
@@ -111,6 +112,25 @@ function refreshSpinner() {
   generateSpinner(checkedMembers);
 }
 
+function createTeamMemberSelect(teamMember) {
+  const div = document.createElement("div");
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  input.id = teamMember;
+  input.name = teamMember;
+  input.checked = true;
+  input.classList = "checkboxInput";
+  input.onchange = function () {
+    refreshSpinner();
+  };
+  const label = document.createElement("label");
+  label.htmlFor = teamMember;
+  label.innerText = teamMember;
+  div.appendChild(input);
+  div.appendChild(label);
+  return div;
+}
+
 /**
  * Generate the checkbox select list
  * @param {String[]} teamMembers
@@ -119,23 +139,23 @@ function generateSelectList(teamMembers) {
   const checkbox = document.getElementById("checkbox");
   checkbox.innerHTML = "";
   for (const teamMember of teamMembers) {
-    const div = document.createElement("div");
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    input.id = teamMember;
-    input.name = teamMember;
-    input.checked = true;
-    input.classList = "checkboxInput";
-    input.onchange = function () {
-      refreshSpinner();
-    };
-    const label = document.createElement("label");
-    label.htmlFor = teamMember;
-    label.innerText = teamMember;
-    div.appendChild(input);
-    div.appendChild(label);
+    const div = createTeamMemberSelect(teamMember);
     checkbox.appendChild(div);
   }
+  const teamMemberInput = document.getElementById("teamMemberInput");
+  const addButton = document.getElementById("addTeamMemberButton");
+  addButton.innerHTML = "Add team member";
+  addButton.onclick = () => {
+    const name = teamMemberInput.value;
+    if (name !== "") {
+      console.log("add " + name);
+      const div = createTeamMemberSelect(name);
+      checkbox.appendChild(div);
+      TEAM_MEMBERS[squad].push(name);
+      refreshSpinner();
+      teamMemberInput.value = "";
+    }
+  };
 }
 
 /**
@@ -283,8 +303,8 @@ function generateSpinner(teamMembers) {
     .attr("stroke", "#444");
 }
 
-generateSpinner(TEAM_MEMBERS["DASH"]);
-generateSelectList(TEAM_MEMBERS["DASH"]);
+generateSpinner(TEAM_MEMBERS[squad]);
+generateSelectList(TEAM_MEMBERS[squad]);
 
 function rotTween() {
   let i = d3.interpolate(oldrotation % 360, rotation);
@@ -334,8 +354,9 @@ for (i = 0; i < l; i++) {
     option.innerHTML = selElmnt.options[j].innerHTML;
     option.addEventListener("click", function (e) {
       // update the chart
-      generateSpinner(TEAM_MEMBERS[this.innerHTML]);
-      generateSelectList(TEAM_MEMBERS[this.innerHTML]);
+      squad = this.innerHTML;
+      generateSpinner(TEAM_MEMBERS[squad]);
+      generateSelectList(TEAM_MEMBERS[squad]);
       // when an item is clicked, update the original select box,
       // and the selected item
       let y, i, k, s, h, sl, yl;
