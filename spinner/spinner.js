@@ -1,23 +1,7 @@
 // define team members
 const TEAM_MEMBERS = {
-  DASH: [
-    "Amber",
-    "Barak",
-    "Emma",
-    "Erin",
-    "Ian",
-    "Michael",
-  ],
-  INFRA: [
-    "Chris",
-    "Derek",
-    "Erin",
-    "Eva",
-    "Harnoor",
-    "Mike K",
-    "Ryan",
-    "Xiao",
-  ],
+  DASH: ["Amber", "Barak", "Emma", "Erin", "Ian", "Michael"],
+  INFRA: ["Chris", "Derek", "Erin", "Eva", "Harnoor", "Mike K", "Ryan", "Xiao"],
   TAG: [
     "Alex",
     "Chris",
@@ -27,7 +11,6 @@ const TEAM_MEMBERS = {
     "Joan",
     "Justin",
     "Scott",
-    "Wolfgang",
     "Xiao",
   ],
   "All teams": [
@@ -50,7 +33,6 @@ const TEAM_MEMBERS = {
     "Ryan",
     "Sagnik",
     "Scott",
-    "Wolfgang",
     "Xiao",
   ],
 };
