@@ -8,9 +8,11 @@ const TEAM_MEMBERS = {
     "Christina",
     "Daphne",
     "Erin",
+    "Jessie",
     "Joan",
     "Justin",
     "Scott",
+    "Steefan",
     "Xiao",
   ],
   "All teams": [
@@ -26,6 +28,7 @@ const TEAM_MEMBERS = {
     "Eva",
     "Harnoor",
     "Ian",
+    "Jessie",
     "Joan",
     "Justin",
     "Michael",
@@ -33,6 +36,7 @@ const TEAM_MEMBERS = {
     "Ryan",
     "Sagnik",
     "Scott",
+    "Steefan",
     "Xiao",
   ],
 };
