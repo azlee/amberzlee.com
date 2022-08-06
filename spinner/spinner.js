@@ -102,7 +102,7 @@ function hslToRgb(h, s, l) {
 function generateColors(numColors) {
   let c = [];
   for (let i = 0; i < numColors; ++i) {
-    c.push(hslToRgb(i / numColors, 0.85, 0.65));
+    c.push(hslToRgb(i / numColors, 0.99, 0.63));
   }
   return c;
 }
