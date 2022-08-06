@@ -8,28 +8,33 @@
     <link rel="shortcut icon" href="smile.svg" />
   </head>
 
-  <div class="custom-select" style="width: 200px">
-    <select>
-      <option value="0">Select team:</option>
-      <option value="1">DASH</option>
-      <option value="2">INFRA</option>
-      <option value="3">TAG</option>
-      <option value="4">All teams</option>
-    </select>
-  </div>
-  <div id="addTeamMember">
-    <input id="teamMemberInput" placeholder="Name" maxlength="25"></input>
-    <button id="addTeamMemberButton"></button>
-  </div>
-  <div id="checkbox">
+  <div class="options">
+    <div class="custom-select" style="width: 200px">
+      <select>
+        <option value="0">Select team:</option>
+        <option value="1">DASH</option>
+        <option value="2">INFRA</option>
+        <option value="3">TAG</option>
+        <option value="4">All teams</option>
+      </select>
+    </div>
+    <div id="addTeamMember">
+      <input id="teamMemberInput" placeholder="Name" maxlength="25"></input>
+      <button id="addTeamMemberButton"></button>
+    </div>
+    <div id="checkbox">
+    </div>
   </div>
 
-  <div id="chart"></div>
-  <div id="chosenPerson"></div>
+  <div class="results">
+    <div id="chart"></div>
+    <div id="chosenPerson"></div>
+  </div>
   <script
     type="text/javascript"
     src="https://d3js.org/d3.v3.min.js"
     charset="utf-8"
   ></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script type="text/javascript" src="spinner.js"></script>
 </html>

@@ -8,7 +8,6 @@ text {
     1px 1px 0 #000;
 }
 #chart {
-  padding-left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +42,7 @@ body {
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #4d4d4d;
+  padding-left: 80px;
   margin-top: 25px;
   transition: all 0.3s;
 }
