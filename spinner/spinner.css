@@ -179,3 +179,18 @@ input[type="checkbox"]:checked {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+.team-member-select {
+  align-items: center;
+  display: flex;
+  margin: 3px;
+}
+
+.remove-button {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.remove-button:hover {
+  background-color: light-grey;
+}

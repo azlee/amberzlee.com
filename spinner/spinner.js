@@ -1,50 +1,3 @@
-// define team members
-const TEAM_MEMBERS = {
-  DASH: ["Amber", "Barak", "Emma", "Erin", "Ian", "Jesse", "Michael"],
-  INFRA: ["Chris", "Derek", "Erin", "Eva", "Harnoor", "Mike K", "Ryan", "Xiao"],
-  TAG: [
-    "Alex",
-    "Chris",
-    "Christina",
-    "Daphne",
-    "Erin",
-    "Jessie",
-    "Joan",
-    "Justin",
-    "Scott",
-    "Spencer",
-    "Steefan",
-    "Xiao",
-  ],
-  "All teams": [
-    "Alex",
-    "Amber",
-    "Barak",
-    "Chris",
-    "Christina",
-    "Daphne",
-    "Derek",
-    "Emma",
-    "Erin",
-    "Eva",
-    "Harnoor",
-    "Ian",
-    "Jesse",
-    "Jessie",
-    "Joan",
-    "Justin",
-    "Michael",
-    "Mike K",
-    "Ryan",
-    "Sagnik",
-    "Scott",
-    "Spencer",
-    "Steefan",
-    "Xiao",
-  ],
-};
-let squad = "DASH";
-
 let padding = { top: 20, right: 40, bottom: 0, left: 0 },
   w = 725 - padding.left - padding.right,
   h = 725 - padding.top - padding.bottom,
@@ -53,6 +6,39 @@ let padding = { top: 20, right: 40, bottom: 0, left: 0 },
   oldrotation = 0,
   picked = 100000,
   oldpick = [];
+
+let TEAM_MEMBERS, squad;
+
+function utf8_to_b64(str) {
+  return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+function b64_to_utf8(str) {
+  return decodeURIComponent(escape(window.atob(str)));
+}
+
+function parseTeamMembers() {
+  TEAM_MEMBERS = JSON.parse(b64_to_utf8(window.location.hash.slice(1)));
+  // get the first team
+  squad = Object.keys(TEAM_MEMBERS)[0];
+
+  // fill in the select
+  const selectParent = document.getElementById("team-selector");
+  let firstSelect = document.createElement("select");
+  let firstOption = document.createElement("option");
+  firstOption.innerHTML = "Select team:";
+  firstOption.value = 0;
+  firstSelect.appendChild(firstOption);
+  let value = 1;
+  for (let team of Object.keys(TEAM_MEMBERS)) {
+    let newOption = document.createElement("option");
+    newOption.innerHTML = team;
+    newOption.value = value;
+    firstSelect.appendChild(newOption);
+    value++;
+  }
+  selectParent.appendChild(firstSelect);
+}
 
 function componentToHex(c) {
   const hex = c.toString(16);
@@ -119,8 +105,36 @@ function refreshSpinner() {
   generateSpinner(checkedMembers);
 }
 
+function updateWindowHash() {
+  window.location.hash = utf8_to_b64(JSON.stringify(TEAM_MEMBERS));
+}
+
+function removeTeamMember(teamMember) {
+  // remove the team member name from all spinners
+  // and update the window location hash
+  for (let team of Object.keys(TEAM_MEMBERS)) {
+    let teamMembers = TEAM_MEMBERS[team];
+    teamMembers = teamMembers.filter((member) => member !== teamMember);
+    TEAM_MEMBERS[team] = teamMembers;
+  }
+  // remove the selector
+  const teamMembersSelected = document.getElementsByClassName(
+    "team-member-select"
+  );
+  for (const teamMemberSelector of teamMembersSelected) {
+    if (teamMemberSelector.value === teamMember) {
+      teamMemberSelector.parentNode.removeChild(teamMemberSelector);
+    }
+  }
+  // update the hash
+  updateWindowHash();
+  refreshSpinner();
+}
+
 function createTeamMemberSelect(teamMember) {
   const div = document.createElement("div");
+  div.className = "team-member-select";
+  div.value = teamMember;
   const input = document.createElement("input");
   input.type = "checkbox";
   input.id = teamMember;
@@ -133,8 +147,16 @@ function createTeamMemberSelect(teamMember) {
   const label = document.createElement("label");
   label.htmlFor = teamMember;
   label.innerText = teamMember;
+
+  // create button to remove members
+  const removeButton = document.createElement("button");
+  removeButton.addEventListener("click", () => removeTeamMember(teamMember));
+  removeButton.innerHTML = "&#x2715";
+  removeButton.className = "remove-button";
+
   div.appendChild(input);
   div.appendChild(label);
+  div.appendChild(removeButton);
   return div;
 }
 
@@ -155,11 +177,11 @@ function generateSelectList(teamMembers) {
   addButton.onclick = () => {
     const name = teamMemberInput.value;
     if (name !== "") {
-      console.log("add " + name);
       const div = createTeamMemberSelect(name);
       checkbox.appendChild(div);
       TEAM_MEMBERS[squad].push(name);
       refreshSpinner();
+      updateWindowHash();
       teamMemberInput.value = "";
     }
   };
@@ -349,6 +371,7 @@ function generateSpinner(teamMembers) {
     .attr("stroke", "#444");
 }
 
+parseTeamMembers();
 generateSpinner(TEAM_MEMBERS[squad]);
 generateSelectList(TEAM_MEMBERS[squad]);
 
