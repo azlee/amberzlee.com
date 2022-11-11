@@ -18,7 +18,7 @@ For example if you navigate to https://amberzlee.com/spinner and want to create 
 
 Multiple teams is supported via the `Select team` dropdown however you will need to generate the hash. 
 
-To do so deine the team members as an object with the key being the team name and the value being a list of the team member names. Then run the base64 encoding on the stringified object to get the hash and add it to the url.
+To do so define the team members as an object with the key being the team name and the value being a list of the team member names. Then run the base64 encoding on the stringified object to get the hash and add it to the url.
 
 Ex.
 ```
