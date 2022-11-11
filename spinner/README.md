@@ -8,7 +8,7 @@ This is a spinner that you can use for selecting a team member. It is customizab
 
 ## Usage
 
-The team members to display in the spinner are part of the url hash in the url. When adding or removing team members with the `Add team member` or the `x` button the url hash will **automatically** be updated so you can bookmark the page to save the current team members.
+The team members to display in the spinner are part of the url hash. When adding or removing team members with the `Add team member` or the `x` button the url hash will **automatically** be updated so you can bookmark the page to save the current team members.
 
 For example if you navigate to https://amberzlee.com/spinner and want to create a spinner with 3 people `Person1`, `Person2`, and `Person3` then you can remove all the default team members and add the names and then the url will have a hash of the team members stored. You can then bookmark the tab.
 
