@@ -18,7 +18,13 @@ function b64_to_utf8(str) {
 }
 
 function parseTeamMembers() {
-  TEAM_MEMBERS = JSON.parse(b64_to_utf8(window.location.hash.slice(1)));
+  const defaultTeamMembers = {
+    team1: ["Alice", "Bob", "Carol", "Dan", "Eve"],
+  };
+  const hash =
+    (window.location.hash && window.location.hash.slice(1)) ||
+    utf8_to_b64(JSON.stringify(defaultTeamMembers));
+  TEAM_MEMBERS = JSON.parse(b64_to_utf8(hash));
   // get the first team
   squad = Object.keys(TEAM_MEMBERS)[0];
 
