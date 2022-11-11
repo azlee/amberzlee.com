@@ -4,11 +4,11 @@
 ![spinnerDemo2](https://user-images.githubusercontent.com/10081163/201414336-40d75941-9bd9-4c40-8a26-f8575181a347.gif)
 
 
-This is a spinner that you can use for selecting a team member. It is customizable so you can use it for any set of people without having to update the code. Feel free to try it out at https://amberzlee.com/spinner
+This is a spinner that you can use for selecting a team member. It retrieves the team members to display from the url hash so you can use it for any set of people without having to update any code. Feel free to try it out at https://amberzlee.com/spinner
 
 ## Usage
 
-The team members to display in the spinner are part of the url hash in the url. When adding or removing team members with the `Add team member` or the `x` button the url hash will **automatically** be updated so you can bookmark the page to save the current team members.
+The team members to display in the spinner are part of the url hash. When adding or removing team members with the `Add team member` or the `x` button the url hash will **automatically** be updated so you can bookmark the page to save the current team members.
 
 For example if you navigate to https://amberzlee.com/spinner and want to create a spinner with 3 people `Person1`, `Person2`, and `Person3` then you can remove all the default team members and add the names and then the url will have a hash of the team members stored. You can then bookmark the tab.
 
