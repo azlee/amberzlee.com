@@ -556,7 +556,7 @@ function createPlayingCard(cardType, i) {
   let widthOfCard = 100 / GameState.numCardsPerPerson;
   card.className = "card-in-hand " + cardType;
   card.style = "width:" + widthOfCard + "%";
-  card.src = "/imgs/" + cardType + ".png";
+  card.src = "./imgs/" + cardType + ".png";
   card.addEventListener(
     "click",
     function (event) {
