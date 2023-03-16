@@ -29,9 +29,9 @@ const SequenceType = {
 };
 
 const ColorChip = {
-  BLUE: "/imgs/blue-chip.png",
-  GREEN: "/imgs/green-chip.png",
-  RED: "/imgs/red-chip.png",
+  BLUE: "./mgs/blue-chip.png",
+  GREEN: "./imgs/green-chip.png",
+  RED: "./imgs/red-chip.png",
 };
 
 const TeamBorderColor = {
@@ -51,14 +51,14 @@ const ModalType = {
 const NUMBER_OF_PLAYERS = [2, 3, 4, 6, 8, 9, 12];
 
 const WINNER_GIFS = [
-  "/imgs/cardWinner.gif",
-  "/imgs/cardWinner2.gif",
-  "/imgs/cardWinner3.gif",
-  "/imgs/cardWinner4.gif",
-  "/imgs/cardWinner5.gif",
-  "/imgs/cardWinner6.gif",
-  "/imgs/cardWinner7.gif",
-  "/imgs/cardWinner8.gif",
+  "./imgs/cardWinner.gif",
+  "./imgs/cardWinner2.gif",
+  "./imgs/cardWinner3.gif",
+  "./imgs/cardWinner4.gif",
+  "./imgs/cardWinner5.gif",
+  "./imgs/cardWinner6.gif",
+  "./imgs/cardWinner7.gif",
+  "./imgs/cardWinner8.gif",
 ];
 
 // Map of the cards and their position in GameState.board
