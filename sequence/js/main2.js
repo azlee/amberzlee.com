@@ -707,7 +707,7 @@ function createPlayForm(newGame) {
   nameInput.maxLength = "15";
   nameInput.placeholder = "ENTER YOUR NAME";
   let imgDiv = document.createElement("img");
-  imgDiv.src = "/imgs/honor_heart-14.png";
+  imgDiv.src = "./imgs/honor_heart-14.png";
   formDiv.appendChild(imgDiv);
   formDiv.appendChild(document.createElement("br"));
   formDiv.appendChild(nameLabel);
@@ -799,7 +799,7 @@ function createOptionForm() {
   createNewGameButton.innerHTML = "CREATE NEW GAME";
   joinExistingButton.innerHTML = "JOIN EXISTING GAME";
   let imgDiv = document.createElement("img");
-  imgDiv.src = "/imgs/honor_heart-14.png";
+  imgDiv.src = "./imgs/honor_heart-14.png";
   div.appendChild(imgDiv);
   div.appendChild(document.createElement("br"));
   div.appendChild(createNewGameButton);
