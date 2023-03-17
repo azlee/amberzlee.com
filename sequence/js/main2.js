@@ -29,7 +29,7 @@ const SequenceType = {
 };
 
 const ColorChip = {
-  BLUE: "./mgs/blue-chip.png",
+  BLUE: "./imgs/blue-chip.png",
   GREEN: "./imgs/green-chip.png",
   RED: "./imgs/red-chip.png",
 };
