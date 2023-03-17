@@ -200,7 +200,7 @@ function getRandomWinnerGif() {
  *
  ****************************************************************************/
 
-const socket = io('https://games.amberzlee.com:61000/');
+const socket = io("https://games.amberzlee.com:61000/");
 console.log(socket);
 
 /**
@@ -463,7 +463,7 @@ function renderTokens(prevBoard) {
         let cardDiv = document.getElementById(id);
         cardDiv.src = ColorChip[card.token];
         if (!cardDiv.style.backgroundImage.includes("linear-gradient")) {
-          const newStyle = `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), ${cardDiv.style.backgroundImage}`;
+          const newStyle = `linear-gradient( rgba(255, 255, 255, 0.75), rgba(0255, 255, 255, 0.75) ), ${cardDiv.style.backgroundImage}`;
           cardDiv.style.backgroundImage = newStyle;
         }
         // remove any drop shadow
