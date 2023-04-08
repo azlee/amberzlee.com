@@ -44,7 +44,7 @@ span.dot {
 }
 
 .card-board {
-  background-color: #a6a6a6;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   overflow: auto;
